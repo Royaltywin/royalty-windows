@@ -59,15 +59,15 @@ const Services = () => {
             <Link
               key={service.title}
               to={service.link}
-              className="bg-accent border-4 border-secondary hover:border-primary rounded-2xl p-8 transition-all duration-300 hover:shadow-accent-glow group"
+              className="bg-accent border-4 border-primary hover:border-primary rounded-2xl p-8 transition-all duration-300 hover:shadow-glow group"
             >
-              <div className="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Icon className="w-10 h-10 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary mb-3">
+              <h3 className="text-2xl font-bold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-lg text-secondary">
+              <p className="text-lg text-foreground">
                 {service.description}
               </p>
             </Link>
