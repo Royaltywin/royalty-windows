@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import QuoteWizard from "@/components/QuoteWizard";
 import InfoSection from "@/components/InfoSection";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
@@ -18,11 +17,6 @@ const Index = () => {
       <main>
         {/* Hero Section with Value Message */}
         <Hero />
-        
-        {/* Quote Wizard Section */}
-        <section className="container mx-auto px-4 md:px-8 py-12">
-          <QuoteWizard />
-        </section>
         
         {/* Info Banner */}
         <InfoSection />
