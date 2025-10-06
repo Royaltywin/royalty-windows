@@ -21,7 +21,7 @@ const Header = () => {
           <Logo />
         </Link>
         
-        <nav className="hidden lg:flex items-center gap-2">
+        <nav className="flex items-center gap-2">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -103,7 +103,7 @@ const Header = () => {
           <Button variant="accent" size="lg" className="hidden md:flex">
             Get Free Quote
           </Button>
-          <Button variant="ghost" size="icon" className="lg:hidden">
+          <Button variant="ghost" size="icon" className="hidden">
             <Menu className="w-6 h-6" />
           </Button>
         </div>
