@@ -11,6 +11,8 @@ import SolarPanelCleaning from "./pages/SolarPanelCleaning";
 import RoofCleaning from "./pages/RoofCleaning";
 import GraffitiRemoval from "./pages/GraffitiRemoval";
 import ConstructionCleanup from "./pages/ConstructionCleanup";
+import Locations from "./pages/Locations";
+import CityService from "./pages/CityService";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/roof-cleaning" element={<RoofCleaning />} />
           <Route path="/graffiti-removal" element={<GraffitiRemoval />} />
           <Route path="/construction-cleanup" element={<ConstructionCleanup />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/:service/:city" element={<CityService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

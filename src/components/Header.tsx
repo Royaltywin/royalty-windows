@@ -1,24 +1,24 @@
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 md:px-8 flex h-24 items-center justify-between">
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#services" className="text-sm font-semibold hover:text-primary transition-colors">
+          <Link to="/#services" className="text-sm font-semibold hover:text-primary transition-colors">
             Services
-          </a>
-          <a href="#locations" className="text-sm font-semibold hover:text-primary transition-colors">
+          </Link>
+          <Link to="/locations" className="text-sm font-semibold hover:text-primary transition-colors">
             Locations
-          </a>
-          <a href="#about" className="text-sm font-semibold hover:text-primary transition-colors">
-            About
-          </a>
-          <a href="#contact" className="text-sm font-semibold hover:text-primary transition-colors">
+          </Link>
+          <a href="tel:951-999-4546" className="text-sm font-semibold hover:text-primary transition-colors">
             Contact
           </a>
         </nav>
