@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        logo: ['Black Ops One', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -42,6 +43,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          foreground: "hsl(var(--gold-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -54,11 +59,14 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-gold': 'var(--gradient-gold)',
         'gradient-hero': 'var(--gradient-hero)',
       },
       boxShadow: {
         'glow': 'var(--shadow-glow)',
         'accent-glow': 'var(--shadow-accent-glow)',
+        'gold-glow': 'var(--shadow-gold-glow)',
+        '3d': 'var(--shadow-3d)',
       },
       borderRadius: {
         lg: "var(--radius)",
