@@ -129,4 +129,21 @@ All colors MUST be HSL.
   .shadow-gold-glow {
     box-shadow: var(--shadow-gold-glow);
   }
+  
+  .text-outlined {
+    color: hsl(var(--gold));
+    text-shadow: 
+      -2px -2px 0 white,
+      2px -2px 0 white,
+      -2px 2px 0 white,
+      2px 2px 0 white,
+      -3px -3px 0 hsl(var(--secondary)),
+      3px -3px 0 hsl(var(--secondary)),
+      -3px 3px 0 hsl(var(--secondary)),
+      3px 3px 0 hsl(var(--secondary)),
+      -4px -4px 0 hsl(var(--secondary)),
+      4px -4px 0 hsl(var(--secondary)),
+      -4px 4px 0 hsl(var(--secondary)),
+      4px 4px 0 hsl(var(--secondary));
+  }
 }

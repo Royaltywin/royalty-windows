@@ -2,17 +2,17 @@ import royaltyLogo from "@/assets/royalty-logo.jpg";
 
 const Logo = () => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-6">
       <img 
         src={royaltyLogo} 
         alt="Royalty Cleaning Services Logo" 
-        className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
+        className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain"
       />
       <div className="flex flex-col leading-none">
-        <span className="font-logo text-4xl md:text-5xl lg:text-6xl text-gold text-3d tracking-wider drop-shadow-lg">
+        <span className="font-logo text-6xl md:text-7xl lg:text-8xl text-outlined tracking-wider font-black">
           ROYALTY
         </span>
-        <span className="font-bold text-sm md:text-base lg:text-lg text-foreground tracking-widest">
+        <span className="font-bold text-lg md:text-xl lg:text-2xl text-foreground tracking-widest mt-2">
           CLEANING SERVICES
         </span>
       </div>

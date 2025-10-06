@@ -16,14 +16,27 @@ import { cn } from "@/lib/utils";
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 md:px-8 flex h-24 items-center justify-between">
-        <Link to="/">
-          <Logo />
-        </Link>
-        
-        <nav className="flex items-center gap-2">
+      <div className="w-full px-4 md:px-8 py-4">
+        {/* Top Row: Logo + Contact Info */}
+        <div className="flex items-center justify-between mb-4">
+          <Link to="/">
+            <Logo />
+          </Link>
+          
+          <div className="flex items-center gap-4">
+            <a href="tel:951-999-4546" className="hidden md:block text-xl font-bold text-primary hover:text-accent transition-colors">
+              (951) 999-4546
+            </a>
+            <Button variant="accent" size="lg" className="hidden md:flex">
+              Get Free Quote
+            </Button>
+          </div>
+        </div>
+
+        {/* Bottom Row: Navigation Menu */}
+        <nav className="flex justify-center w-full">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex-wrap justify-center">
               <NavigationMenuItem>
                 <Link to="/">
                   <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
@@ -37,22 +50,19 @@ const Header = () => {
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-background">
+                  <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-background">
                     {services.map((service) => (
                       <li key={service.key}>
                         <NavigationMenuLink asChild>
                           <Link
                             to={`/${service.key}`}
                             className={cn(
-                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             )}
                           >
-                            <div className="text-sm font-medium leading-none">
+                            <div className="text-sm font-medium">
                               {service.name}
                             </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Professional {service.name.toLowerCase()} services
-                            </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
@@ -95,18 +105,6 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
-        
-        <div className="flex items-center gap-4">
-          <a href="tel:951-999-4546" className="hidden md:block text-sm font-bold text-primary hover:text-accent transition-colors">
-            (951) 999-4546
-          </a>
-          <Button variant="accent" size="lg" className="hidden md:flex">
-            Get Free Quote
-          </Button>
-          <Button variant="ghost" size="icon" className="hidden">
-            <Menu className="w-6 h-6" />
-          </Button>
-        </div>
       </div>
     </header>
   );
