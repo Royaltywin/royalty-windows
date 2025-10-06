@@ -1,25 +1,42 @@
-import { Sparkles, Droplets, Home, Sun } from "lucide-react";
+import { Sparkles, Droplets, Home, Sun, Trash2, Paintbrush } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: Sparkles,
     title: "Window Cleaning",
-    description: "Crystal clear windows for residential and commercial properties"
+    description: "Crystal clear windows for residential and commercial properties",
+    link: "/window-cleaning"
   },
   {
     icon: Droplets,
     title: "Pressure Washing",
-    description: "Professional power washing for driveways, patios, and more"
+    description: "Professional power washing for driveways, patios, and more",
+    link: "/pressure-washing"
   },
   {
     icon: Home,
-    title: "House Washing",
-    description: "Complete exterior cleaning to restore your home's beauty"
+    title: "Roof Cleaning",
+    description: "Extend roof life with safe, effective cleaning methods",
+    link: "/roof-cleaning"
   },
   {
     icon: Sun,
     title: "Solar Panel Cleaning",
-    description: "Maximize efficiency with professional solar panel maintenance"
+    description: "Maximize efficiency with professional solar panel maintenance",
+    link: "/solar-panel-cleaning"
+  },
+  {
+    icon: Paintbrush,
+    title: "Graffiti Removal",
+    description: "Fast, effective removal to restore your property",
+    link: "/graffiti-removal"
+  },
+  {
+    icon: Trash2,
+    title: "Construction Cleanup",
+    description: "Move-in ready cleaning for new builds and renovations",
+    link: "/construction-cleanup"
   }
 ];
 
@@ -35,12 +52,13 @@ const Services = () => {
         </p>
       </div>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => {
           const Icon = service.icon;
           return (
-            <div
+            <Link
               key={service.title}
+              to={service.link}
               className="bg-card border-2 border-border hover:border-primary rounded-2xl p-6 transition-all duration-300 hover:shadow-glow group"
             >
               <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -52,7 +70,7 @@ const Services = () => {
               <p className="text-muted-foreground">
                 {service.description}
               </p>
-            </div>
+            </Link>
           );
         })}
       </div>
