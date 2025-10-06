@@ -13,7 +13,18 @@ import GraffitiRemoval from "./pages/GraffitiRemoval";
 import ConstructionCleanup from "./pages/ConstructionCleanup";
 import GutterCleaning from "./pages/GutterCleaning";
 import Locations from "./pages/Locations";
-import CityService from "./pages/CityService";
+import CityHub from "./pages/CityHub";
+import ServiceCity from "./pages/ServiceCity";
+
+// County Hub Pages
+import OrangeCounty from "./pages/counties/OrangeCounty";
+import RiversideCounty from "./pages/counties/RiversideCounty";
+import LosAngelesCounty from "./pages/counties/LosAngelesCounty";
+import SanBernardinoCounty from "./pages/counties/SanBernardinoCounty";
+import SanDiegoCounty from "./pages/counties/SanDiegoCounty";
+import VenturaCounty from "./pages/counties/VenturaCounty";
+
+// Keep existing city-specific window cleaning pages for SEO
 import AlisoViejoWindowCleaning from "./pages/cities/AlisoViejoWindowCleaning";
 import AnaheimWindowCleaning from "./pages/cities/AnaheimWindowCleaning";
 import BreaWindowCleaning from "./pages/cities/BreaWindowCleaning";
@@ -75,7 +86,22 @@ const App = () => (
           <Route path="/graffiti-removal" element={<GraffitiRemoval />} />
           <Route path="/gutter-cleaning" element={<GutterCleaning />} />
           <Route path="/construction-cleanup" element={<ConstructionCleanup />} />
+          
+          {/* Locations Structure */}
           <Route path="/locations" element={<Locations />} />
+          
+          {/* County Hubs */}
+          <Route path="/locations/orange" element={<OrangeCounty />} />
+          <Route path="/locations/riverside" element={<RiversideCounty />} />
+          <Route path="/locations/los-angeles" element={<LosAngelesCounty />} />
+          <Route path="/locations/san-bernardino" element={<SanBernardinoCounty />} />
+          <Route path="/locations/san-diego" element={<SanDiegoCounty />} />
+          <Route path="/locations/ventura" element={<VenturaCounty />} />
+          
+          {/* City Hubs - Dynamic Route */}
+          <Route path="/locations/:county/:city" element={<CityHub />} />
+          
+          {/* Existing Orange County Window Cleaning Pages (for SEO) */}
           <Route path="/window-cleaning/aliso-viejo" element={<AlisoViejoWindowCleaning />} />
           <Route path="/window-cleaning/anaheim" element={<AnaheimWindowCleaning />} />
           <Route path="/window-cleaning/brea" element={<BreaWindowCleaning />} />
@@ -119,7 +145,10 @@ const App = () => (
           <Route path="/window-cleaning/silverado" element={<SilveradoWindowCleaning />} />
           <Route path="/window-cleaning/talega" element={<TalegaWindowCleaning />} />
           <Route path="/window-cleaning/trabuco-canyon" element={<TrabucoCanyonWindowCleaning />} />
-          <Route path="/:service/:city" element={<CityService />} />
+          
+          {/* Service-City Pages - Dynamic Route for all services x all cities */}
+          <Route path="/:service/:city" element={<ServiceCity />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
