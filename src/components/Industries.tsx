@@ -35,7 +35,7 @@ const industries = [
 
 const Industries = () => {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-accent mb-4">
@@ -52,15 +52,15 @@ const Industries = () => {
             return (
               <div
                 key={industry.title}
-                className="bg-accent border-4 border-secondary rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
+                className="bg-background border-4 border-secondary rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
               >
                 <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-8 h-8 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-2">
+                <h3 className="text-xl font-bold text-foreground mb-2">
                   {industry.title}
                 </h3>
-                <p className="text-secondary">
+                <p className="text-foreground">
                   {industry.description}
                 </p>
               </div>
