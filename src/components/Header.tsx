@@ -2,20 +2,11 @@ import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { services } from "@/data/locations";
 import { cn } from "@/lib/utils";
-
 const Header = () => {
-  return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  return <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="w-full px-4 md:px-8 py-4">
         {/* Top Row: Logo + Contact Info */}
         <div className="flex items-center justify-between mb-4">
@@ -23,9 +14,7 @@ const Header = () => {
             <Logo />
           </Link>
           
-          <a href="tel:951-999-4546" className="hidden md:block text-xl font-bold text-primary hover:text-accent transition-colors">
-            (951) 999-4546
-          </a>
+          
         </div>
 
         {/* Bottom Row: Navigation Menu */}
@@ -46,22 +35,15 @@ const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-background">
-                    {services.map((service) => (
-                      <li key={service.key}>
+                    {services.map(service => <li key={service.key}>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to={`/${service.key}`}
-                            className={cn(
-                              "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            )}
-                          >
+                          <Link to={`/${service.key}`} className={cn("block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground")}>
                             <div className="text-sm font-medium">
                               {service.name}
                             </div>
                           </Link>
                         </NavigationMenuLink>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -101,8 +83,6 @@ const Header = () => {
           </NavigationMenu>
         </nav>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
