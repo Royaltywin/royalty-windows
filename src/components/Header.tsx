@@ -7,9 +7,9 @@ import { services } from "@/data/locations";
 import { cn } from "@/lib/utils";
 const Header = () => {
   return <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="w-full px-4 md:px-8 py-2">
+      <div className="w-full px-4 md:px-8 py-1">
         {/* Top Row: Logo + Contact Info */}
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between mb-1">
           <Link to="/">
             <Logo />
           </Link>
