@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import QuoteWizard from "@/components/QuoteWizard";
 import InfoSection from "@/components/InfoSection";
 import Services from "@/components/Services";
+import Industries from "@/components/Industries";
 import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import SEOHead from "@/components/SEOHead";
@@ -28,6 +29,9 @@ const Index = () => {
         
         {/* Services Grid */}
         <Services />
+        
+        {/* Industries Section */}
+        <Industries />
       </main>
       
       <Footer />

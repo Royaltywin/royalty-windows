@@ -1,53 +1,57 @@
-import heroImage from "@/assets/hero-cleaning-team.jpg";
+import customerImage from "@/assets/hero-customer.jpg";
 import { Button } from "@/components/ui/button";
-import { MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Professional cleaning team providing window and exterior cleaning services" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-hero" />
-      </div>
-      
-      {/* Content */}
-      <div className="container mx-auto px-4 md:px-8 py-20 md:py-32 relative z-10">
-        <div className="max-w-4xl">
-          {/* Main Headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-none text-white tracking-tight mb-6">
-            VALUE<br />
-            YOU<br />
-            CAN<br />
-            <span className="text-gold text-3d">SEE</span>
-          </h1>
-          
-          {/* Subheadline */}
-          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-8 drop-shadow-lg">
-            Satisfaction you can feel.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+    <section className="bg-background py-12 md:py-16">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid md:grid-cols-3 gap-8 items-center">
+          {/* Left: Value Motto */}
+          <div className="text-center md:text-left">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-foreground mb-4">
+              VALUE<br />
+              YOU<br />
+              CAN<br />
+              <span className="text-gold text-3d">SEE</span>
+            </h1>
+            <p className="text-xl md:text-2xl font-bold text-accent">
+              Satisfaction you can feel.
+            </p>
+          </div>
+
+          {/* Middle: Customer Support Image */}
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-sm">
+              <img 
+                src={customerImage} 
+                alt="Customer support representative ready to help with your cleaning needs" 
+                className="w-full h-auto rounded-2xl shadow-2xl border-4 border-accent"
+              />
+            </div>
+          </div>
+
+          {/* Right: Start Your Free Estimate */}
+          <div className="flex flex-col items-center md:items-end text-center md:text-right gap-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-black text-foreground mb-2">
+                Start Your
+              </h2>
+              <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
+                FREE ESTIMATE
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Professional cleaning services<br />
+                tailored to your needs
+              </p>
+            </div>
             <Button 
-              variant="accent" 
+              variant="default"
               size="lg" 
-              className="text-xl py-6 px-8 group"
+              className="text-xl py-6 px-10 bg-accent hover:bg-accent/90 text-secondary font-bold group shadow-accent-glow"
             >
-              Get a Free Quote
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-xl py-6 px-8 bg-white/10 border-white text-white hover:bg-white hover:text-black backdrop-blur-sm"
-            >
-              <MapPin className="mr-2 w-5 h-5" />
-              Find Your Local Cleaner
+              Get Started
+              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>

@@ -6,13 +6,13 @@ const Logo = () => {
       <img 
         src={royaltyLogo} 
         alt="Royalty Cleaning Services Logo" 
-        className="w-16 h-16 md:w-20 md:h-20 object-contain"
+        className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
       />
       <div className="flex flex-col leading-none">
-        <span className="font-logo text-3xl md:text-4xl lg:text-5xl text-gold text-3d tracking-wider drop-shadow-lg">
+        <span className="font-logo text-4xl md:text-5xl lg:text-6xl text-gold text-3d tracking-wider drop-shadow-lg">
           ROYALTY
         </span>
-        <span className="font-bold text-xs md:text-sm text-foreground tracking-widest">
+        <span className="font-bold text-sm md:text-base lg:text-lg text-foreground tracking-widest">
           CLEANING SERVICES
         </span>
       </div>
