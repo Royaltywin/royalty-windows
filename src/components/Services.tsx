@@ -42,7 +42,8 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="container mx-auto px-4 md:px-8 py-16 md:py-24" id="services">
+    <section className="bg-gray-100 py-16 md:py-24" id="services">
+      <div className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-12">
         <h2 className="text-5xl md:text-6xl font-black text-foreground mb-4">
           Our Services
@@ -73,6 +74,7 @@ const Services = () => {
             </Link>
           );
         })}
+      </div>
       </div>
     </section>
   );
