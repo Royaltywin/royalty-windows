@@ -138,35 +138,31 @@ All colors MUST be HSL.
   
   .text-outlined {
     color: white;
-    -webkit-text-stroke: 2px hsl(0 0% 0%);
+    -webkit-text-stroke: 1px hsl(0 0% 0%);
     text-shadow: 
       /* Black inner stroke */
       -1px -1px 0 hsl(0 0% 0%),
       1px -1px 0 hsl(0 0% 0%),
       -1px 1px 0 hsl(0 0% 0%),
       1px 1px 0 hsl(0 0% 0%),
-      /* Gold middle outline */
-      -3px -3px 0 hsl(var(--gold)),
-      3px -3px 0 hsl(var(--gold)),
-      -3px 3px 0 hsl(var(--gold)),
-      3px 3px 0 hsl(var(--gold)),
-      -4px -4px 0 hsl(var(--gold)),
-      4px -4px 0 hsl(var(--gold)),
-      -4px 4px 0 hsl(var(--gold)),
-      4px 4px 0 hsl(var(--gold)),
-      /* Royal blue outer stroke */
-      -6px -6px 0 hsl(var(--royal-blue)),
-      6px -6px 0 hsl(var(--royal-blue)),
-      -6px 6px 0 hsl(var(--royal-blue)),
-      6px 6px 0 hsl(var(--royal-blue)),
-      -7px -7px 0 hsl(var(--royal-blue)),
-      7px -7px 0 hsl(var(--royal-blue)),
-      -7px 7px 0 hsl(var(--royal-blue)),
-      7px 7px 0 hsl(var(--royal-blue)),
-      -8px -8px 0 hsl(var(--royal-blue)),
-      8px -8px 0 hsl(var(--royal-blue)),
-      -8px 8px 0 hsl(var(--royal-blue)),
-      8px 8px 0 hsl(var(--royal-blue));
+      /* Neon green thin outline */
+      -2px -2px 0 hsl(var(--accent)),
+      2px -2px 0 hsl(var(--accent)),
+      -2px 2px 0 hsl(var(--accent)),
+      2px 2px 0 hsl(var(--accent)),
+      /* Magenta outer stroke */
+      -4px -4px 0 hsl(var(--primary)),
+      4px -4px 0 hsl(var(--primary)),
+      -4px 4px 0 hsl(var(--primary)),
+      4px 4px 0 hsl(var(--primary)),
+      -5px -5px 0 hsl(var(--primary)),
+      5px -5px 0 hsl(var(--primary)),
+      -5px 5px 0 hsl(var(--primary)),
+      5px 5px 0 hsl(var(--primary)),
+      -6px -6px 0 hsl(var(--primary)),
+      6px -6px 0 hsl(var(--primary)),
+      -6px 6px 0 hsl(var(--primary)),
+      6px 6px 0 hsl(var(--primary));
   }
   
   .royal-blue {
