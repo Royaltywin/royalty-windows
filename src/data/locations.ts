@@ -246,6 +246,564 @@ export const serviceContent: Record<string, ServiceContent> = {
   }
 };
 
+export interface CityWindowCleaningContent {
+  title: string;
+  metaDescription: string;
+  heading: string;
+  intro: string;
+  services: string[];
+  whyChoose: string[];
+  nearbyAreas?: string;
+}
+
+export const cityWindowCleaningContent: Record<string, CityWindowCleaningContent> = {
+  "aliso-viejo": {
+    title: "Window Cleaning in Aliso Viejo, CA | Royalty Window Cleaning",
+    metaDescription: "Professional residential and commercial window cleaning in Aliso Viejo, CA. Streak-free shine, inside & out. Call (951) 999-4546 for your free quote.",
+    heading: "Welcome to Royalty Window Cleaning Aliso Viejo",
+    intro: "We proudly serve Aliso Viejo homeowners and businesses with spotless, streak-free window cleaning. From hillside homes with ocean views to Town Center storefronts, our trained professionals ensure every window sparkles.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Screen & Track Cleaning",
+      "Hard Water Stain Removal",
+      "Post-Construction Glass Detailing",
+      "Skylight & Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Locally operated and insured",
+      "Eco-friendly cleaning solutions",
+      "5-Star rated for quality and reliability",
+      "Satisfaction guaranteed every time"
+    ],
+    nearbyAreas: "Laguna Niguel • Mission Viejo • Laguna Hills • Lake Forest"
+  },
+  "anaheim": {
+    title: "Window Cleaning in Anaheim, CA | Royalty Window Cleaning",
+    metaDescription: "Trusted window cleaners in Anaheim for homes, offices, and attractions. Get streak-free glass with Royalty Window Cleaning.",
+    heading: "Professional Window Cleaning in Anaheim",
+    intro: "From resort-area hotels near Disneyland to suburban homes and commercial plazas, Royalty Window Cleaning Anaheim keeps your property shining bright.",
+    services: [
+      "Residential Window Cleaning",
+      "Commercial Glass Cleaning",
+      "Screen, Track & Frame Detailing",
+      "High-Reach and Skylight Cleaning"
+    ],
+    whyChoose: [
+      "Experienced technicians with top-grade tools",
+      "Fully insured and safety-certified",
+      "Affordable, transparent pricing",
+      "Satisfaction guaranteed"
+    ],
+    nearbyAreas: "Anaheim Hills • Platinum Triangle • West Anaheim • Downtown Anaheim"
+  },
+  "brea": {
+    title: "Window Cleaning in Brea, CA | Royalty Window Cleaning",
+    metaDescription: "Expert window cleaners in Brea providing residential & commercial services.",
+    heading: "About Our Brea Window Cleaning",
+    intro: "Royalty Window Cleaning Brea brings sparkle to homes and offices near the Brea Mall, Birch Street Promenade, and beyond.",
+    services: [
+      "Interior & Exterior Glass Cleaning",
+      "Screen & Track Detailing",
+      "Hard Water Spot Removal",
+      "Skylight Cleaning"
+    ],
+    whyChoose: [
+      "Licensed, insured & trusted technicians",
+      "Environmentally safe cleaning",
+      "Always on-time service"
+    ],
+    nearbyAreas: "Fullerton • La Habra • Placentia"
+  },
+  "buena-park": {
+    title: "Window Cleaning in Buena Park, CA | Royalty Window Cleaning",
+    metaDescription: "Brighten your Buena Park property with our professional window cleaning team.",
+    heading: "Welcome to Royalty Window Cleaning Buena Park",
+    intro: "Whether you manage a Knott's Berry Farm–area business or a residential community, our window specialists restore perfect clarity.",
+    services: [
+      "Residential & Commercial Window Cleaning",
+      "Screen, Track & Frame Cleaning",
+      "Pressure-Rinse & Spot-Free Finish"
+    ],
+    whyChoose: [
+      "Locally operated with years of experience",
+      "Friendly, uniformed staff",
+      "100% satisfaction guarantee"
+    ],
+    nearbyAreas: "La Palma • Cypress • Fullerton"
+  },
+  "costa-mesa": {
+    title: "Window Cleaning in Costa Mesa, CA | Royalty Window Cleaning",
+    metaDescription: "Reliable window cleaning for Costa Mesa homes and businesses.",
+    heading: "Crystal-Clear Windows in Costa Mesa",
+    intro: "Royalty Window Cleaning Costa Mesa serves local homes near South Coast Plaza and the Eastside neighborhood with precision, shine, and care.",
+    services: [
+      "Residential Window Washing",
+      "Commercial Glass Cleaning",
+      "Hard-Water & Salt-Air Treatment",
+      "Track & Screen Detailing"
+    ],
+    whyChoose: [
+      "Trusted in Orange County for years",
+      "Modern tools & spot-free finish systems",
+      "Licensed, insured, and eco-safe"
+    ],
+    nearbyAreas: "Newport Beach • Fountain Valley • Irvine"
+  },
+  "cypress": {
+    title: "Window Cleaning in Cypress, CA | Royalty Window Cleaning",
+    metaDescription: "Residential & commercial window cleaning in Cypress, CA.",
+    heading: "Shine Brighter with Royalty Window Cleaning Cypress",
+    intro: "Our Cypress team handles single-story homes to large business centers — delivering streak-free windows every time.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Track & Screen Detailing",
+      "Skylight & Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Locally owned & operated",
+      "Attention to detail, guaranteed results",
+      "Same-day quotes available"
+    ],
+    nearbyAreas: "Buena Park • La Palma • Los Alamitos"
+  },
+  "dana-point": {
+    title: "Window Cleaning in Dana Point, CA | Royalty Window Cleaning",
+    metaDescription: "Coastal window cleaning experts in Dana Point, CA. Restore clarity and shine to ocean-view homes and businesses.",
+    heading: "Local Window Cleaning Experts",
+    intro: "At Royalty Window Cleaning Dana Point, we specialize in removing salt air residue and ocean spray from windows across Monarch Beach, Lantern District, and Dana Hills.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Screen & Track Detailing",
+      "Salt-Air & Hard-Water Treatment",
+      "Post-Construction Glass Cleaning"
+    ],
+    whyChoose: [
+      "Local technicians experienced with coastal glass care",
+      "Eco-friendly, streak-free finish",
+      "Licensed, insured, and professional"
+    ],
+    nearbyAreas: "San Clemente • Laguna Niguel • Capistrano Beach"
+  },
+  "fountain-valley": {
+    title: "Window Cleaning in Fountain Valley, CA | Royalty Window Cleaning",
+    metaDescription: "Sparkling window cleaning for Fountain Valley homes and offices. Call Royalty Window Cleaning for streak-free results.",
+    heading: "Expert Window Cleaning in Fountain Valley",
+    intro: "We service family homes and shopping centers near Mile Square Park, Fountain Valley High, and Ellis Avenue. Our experienced cleaners bring bright, spotless windows to every property.",
+    services: [
+      "Residential Window Cleaning",
+      "Commercial Storefront Glass",
+      "Screen & Track Detailing",
+      "Hard-Water Spot Removal"
+    ],
+    whyChoose: [
+      "Fast, friendly, reliable teams",
+      "100% satisfaction guarantee",
+      "Fair, transparent pricing"
+    ],
+    nearbyAreas: "Huntington Beach • Westminster • Costa Mesa"
+  },
+  "fullerton": {
+    title: "Window Cleaning in Fullerton, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning in Fullerton for homes, schools, and offices. Trusted, affordable, and insured.",
+    heading: "Fullerton's Trusted Window Cleaners",
+    intro: "From downtown apartments to CSU Fullerton campus offices, we keep windows spotless across all of Fullerton.",
+    services: [
+      "Interior/Exterior Window Cleaning",
+      "Screen & Track Cleaning",
+      "Glass Restoration (Hard Water Removal)",
+      "Skylight and Solar Tube Cleaning"
+    ],
+    whyChoose: [
+      "Local Orange County expertise",
+      "Safe ladder and lift equipment",
+      "Affordable maintenance plans"
+    ],
+    nearbyAreas: "Placentia • Brea • Anaheim"
+  },
+  "garden-grove": {
+    title: "Window Cleaning in Garden Grove, CA | Royalty Window Cleaning",
+    metaDescription: "Affordable window cleaning in Garden Grove, CA for homes and commercial buildings.",
+    heading: "Reliable Garden Grove Window Cleaning",
+    intro: "Royalty Window Cleaning Garden Grove brightens homes and storefronts across West Garden Grove, Little Saigon, and Civic Center areas.",
+    services: [
+      "Residential Window Cleaning",
+      "Commercial & Retail Glass Cleaning",
+      "Track & Screen Detail",
+      "Skylight & Solar Panel Glass"
+    ],
+    whyChoose: [
+      "Experienced & insured team",
+      "Spot-free rinse technology",
+      "Satisfaction guaranteed"
+    ],
+    nearbyAreas: "Stanton • Westminster • Anaheim"
+  },
+  "huntington-beach": {
+    title: "Window Cleaning in Huntington Beach, CA | Royalty Window Cleaning",
+    metaDescription: "Ocean-air window cleaning specialists in Huntington Beach. Keep your coastal property spotless.",
+    heading: "Shine Brighter by the Coast",
+    intro: "Royalty Window Cleaning Huntington Beach handles everything from surf-side homes to Main Street storefronts — removing salt residue and keeping your glass crystal-clear.",
+    services: [
+      "Residential & Commercial Window Cleaning",
+      "Screen, Frame, & Track Cleaning",
+      "Hard-Water & Salt-Film Removal",
+      "Skylight & Balcony Glass"
+    ],
+    whyChoose: [
+      "Coastal glass specialists",
+      "Eco-friendly, streak-free finish",
+      "Local technicians, licensed & insured"
+    ],
+    nearbyAreas: "Newport Beach • Fountain Valley • Costa Mesa"
+  },
+  "irvine": {
+    title: "Window Cleaning in Irvine, CA | Royalty Window Cleaning",
+    metaDescription: "Trusted window cleaners in Irvine, CA — residential, commercial & solar glass cleaning.",
+    heading: "Window Cleaning Services in Irvine",
+    intro: "At Royalty Window Cleaning Irvine, we service all master-planned communities — from Woodbridge to Turtle Rock — delivering spotless, glare-free glass for homes and offices alike.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Screen & Track Detailing",
+      "Hard-Water Stain Removal",
+      "Post-Construction Cleaning"
+    ],
+    whyChoose: [
+      "Fast, efficient, professional service",
+      "Advanced equipment for high windows",
+      "Eco-friendly cleaning solutions"
+    ],
+    nearbyAreas: "Tustin • Lake Forest • Costa Mesa • Newport Beach"
+  },
+  "la-habra": {
+    title: "Window Cleaning in La Habra, CA | Royalty Window Cleaning",
+    metaDescription: "Local experts providing residential & commercial window cleaning in La Habra. Fast, affordable, and streak-free. Call (951) 999-4546.",
+    heading: "Brighten Your View in La Habra",
+    intro: "From hillside homes overlooking the Canyons to busy retail centers along Whittier Boulevard, Royalty Window Cleaning La Habra keeps every window crystal-clear.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Track & Screen Detail Service",
+      "Hard-Water Stain Removal",
+      "Skylight and Mirror Glass Cleaning"
+    ],
+    whyChoose: [
+      "Reliable and insured professionals",
+      "Eco-safe products for lasting clarity",
+      "5-Star customer reviews"
+    ],
+    nearbyAreas: "Brea • Fullerton • La Mirada"
+  },
+  "la-palma": {
+    title: "Window Cleaning in La Palma, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning services in La Palma for homes and offices. Call Royalty Window Cleaning for sparkling results.",
+    heading: "Window Cleaning Made Easy",
+    intro: "Royalty Window Cleaning La Palma offers personalized service for residents and businesses near Walker Street and Moody Park. Enjoy streak-free glass that brightens every room.",
+    services: [
+      "Interior/Exterior Window Cleaning",
+      "Track & Screen Washing",
+      "Skylight & Patio Door Glass"
+    ],
+    whyChoose: [
+      "Prompt, courteous teams",
+      "Insured for residential & commercial properties",
+      "Satisfaction guaranteed"
+    ],
+    nearbyAreas: "Cypress • Buena Park • Los Alamitos"
+  },
+  "laguna-beach": {
+    title: "Window Cleaning in Laguna Beach, CA | Royalty Window Cleaning",
+    metaDescription: "Expert coastal window cleaning in Laguna Beach. Remove salt residue and enhance ocean views with Royalty Window Cleaning.",
+    heading: "Keeping Laguna Views Perfect",
+    intro: "From Pacific Coast Highway homes to Downtown galleries, Royalty Window Cleaning Laguna Beach brings clarity to coastal glass while protecting against salt and sand.",
+    services: [
+      "Residential & Commercial Window Cleaning",
+      "Salt-Air Residue Removal",
+      "Glass Restoration & Sealing"
+    ],
+    whyChoose: [
+      "Coastal glass experts",
+      "Environmentally safe solutions",
+      "Insured and locally operated"
+    ],
+    nearbyAreas: "Laguna Niguel • Dana Point • Newport Coast"
+  },
+  "laguna-hills": {
+    title: "Window Cleaning in Laguna Hills, CA | Royalty Window Cleaning",
+    metaDescription: "Laguna Hills window cleaning specialists for homes and businesses. Spotless results guaranteed.",
+    heading: "Professional Window Cleaning in Laguna Hills",
+    intro: "Royalty Window Cleaning Laguna Hills helps residents and offices restore clear views and natural light throughout their spaces.",
+    services: [
+      "Interior & Exterior Glass Washing",
+      "Track, Frame & Screen Detailing",
+      "Skylight and Balcony Glass"
+    ],
+    whyChoose: [
+      "Family-owned and insured",
+      "Reliable scheduling and fair pricing",
+      "100% satisfaction guarantee"
+    ],
+    nearbyAreas: "Mission Viejo • Laguna Niguel • Aliso Viejo"
+  },
+  "laguna-niguel": {
+    title: "Window Cleaning in Laguna Niguel, CA | Royalty Window Cleaning",
+    metaDescription: "Top-rated window cleaning in Laguna Niguel for residential and commercial properties.",
+    heading: "About Our Laguna Niguel Team",
+    intro: "We clean coastal windows across Bear Brand Ranch, Niguel Shores, and The Summit with precision and care.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Salt & Hard-Water Treatment",
+      "Frame, Track, and Screen Detail"
+    ],
+    whyChoose: [
+      "Experienced with coastal homes",
+      "Safe equipment & eco-friendly solutions",
+      "Always on time and professional"
+    ],
+    nearbyAreas: "Aliso Viejo • Dana Point • Laguna Hills"
+  },
+  "mission-viejo": {
+    title: "Window Cleaning in Mission Viejo, CA | Royalty Window Cleaning",
+    metaDescription: "Reliable window cleaners in Mission Viejo for homes, offices & HOAs. Get a free quote today.",
+    heading: "Your Trusted Local Cleaners",
+    intro: "Royalty Window Cleaning Mission Viejo serves neighborhoods from Saddleback College to Lake Mission Viejo, providing clear, streak-free windows for every property.",
+    services: [
+      "Interior/Exterior Glass Cleaning",
+      "Screen, Track & Frame Detailing",
+      "Skylight & Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Fully licensed and insured",
+      "Friendly, professional crews",
+      "100% satisfaction guaranteed"
+    ],
+    nearbyAreas: "Laguna Hills • Lake Forest • Aliso Viejo"
+  },
+  "newport-beach": {
+    title: "Window Cleaning in Newport Beach, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning in Newport Beach for coastal homes and businesses. Spot-free finish guaranteed. Call (951) 999-4546.",
+    heading: "Crystal-Clear Views on the Coast",
+    intro: "Royalty Window Cleaning Newport Beach specializes in removing salt spray and ocean film from beachfront windows in Balboa Peninsula, Corona del Mar, and Newport Coast.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Salt & Hard-Water Stain Treatment",
+      "Frame & Screen Detailing",
+      "Skylight Cleaning"
+    ],
+    whyChoose: [
+      "Coastal window experts",
+      "Fully insured & eco-friendly",
+      "Guaranteed streak-free finish"
+    ],
+    nearbyAreas: "Costa Mesa • Huntington Beach • Irvine"
+  },
+  "orange": {
+    title: "Window Cleaning in Orange, CA | Royalty Window Cleaning",
+    metaDescription: "Top-rated window cleaning for Orange homes and offices. Locally trusted, affordable, and insured.",
+    heading: "Bringing Clarity to Orange",
+    intro: "From historic Old Towne district to family homes near Chapman University, Royalty Window Cleaning Orange delivers exceptional shine and service.",
+    services: [
+      "Residential Window Cleaning",
+      "Commercial Glass Washing",
+      "Track & Screen Cleaning",
+      "Skylight & Mirror Care"
+    ],
+    whyChoose: [
+      "Local technicians & fast response",
+      "Affordable maintenance plans",
+      "5-Star Google ratings"
+    ],
+    nearbyAreas: "Villa Park • Tustin • Anaheim"
+  },
+  "placentia": {
+    title: "Window Cleaning in Placentia, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning in Placentia for residential and commercial properties.",
+    heading: "Local Service You Can Trust",
+    intro: "Royalty Window Cleaning Placentia brightens homes near Kraemer Boulevard and businesses throughout downtown Placentia.",
+    services: [
+      "Interior & Exterior Cleaning",
+      "Track & Screen Detailing",
+      "Hard-Water Stain Removal"
+    ],
+    whyChoose: [
+      "Fully insured & locally owned",
+      "Competitive rates",
+      "Prompt, friendly service"
+    ],
+    nearbyAreas: "Yorba Linda • Fullerton • Brea"
+  },
+  "rancho-santa-margarita": {
+    title: "Window Cleaning in Rancho Santa Margarita, CA | Royalty Window Cleaning",
+    metaDescription: "Reliable window cleaning in Rancho Santa Margarita for homes and businesses. Fast quotes, eco-friendly products.",
+    heading: "Sparkling Windows in Rancho Santa Margarita",
+    intro: "Royalty Window Cleaning Rancho Santa Margarita provides professional care for residences around Santa Margarita Parkway and Trabuco Canyon.",
+    services: [
+      "Interior/Exterior Window Washing",
+      "Track & Screen Detailing",
+      "Skylight & Mirror Glass Cleaning"
+    ],
+    whyChoose: [
+      "Trusted local cleaners",
+      "Safe for pets and landscaping",
+      "Licensed & insured"
+    ],
+    nearbyAreas: "Mission Viejo • Ladera Ranch • Coto de Caza"
+  },
+  "san-clemente": {
+    title: "Window Cleaning in San Clemente, CA | Royalty Window Cleaning",
+    metaDescription: "Coastal window cleaning experts in San Clemente. Keep your ocean-view glass spotless and protected.",
+    heading: "Bring Back the Shine",
+    intro: "Royalty Window Cleaning San Clemente removes salt spray and buildup from seaside properties in Talega, Marblehead, and near the Pier. We help coastal homeowners enjoy clear views year-round.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Salt-Air Film & Hard-Water Removal",
+      "Screen & Frame Detailing",
+      "Skylight & Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Coastal glass specialists",
+      "Safe, eco-friendly products",
+      "Licensed, insured, and trusted"
+    ],
+    nearbyAreas: "Dana Point • San Juan Capistrano • Laguna Niguel"
+  },
+  "san-juan-capistrano": {
+    title: "Window Cleaning in San Juan Capistrano, CA | Royalty Window Cleaning",
+    metaDescription: "Trusted window cleaners in San Juan Capistrano for homes, offices, and historic buildings.",
+    heading: "Preserving Historic Views",
+    intro: "From Mission-area shops to new hillside developments, Royalty Window Cleaning San Juan Capistrano brings clarity and care to every glass surface.",
+    services: [
+      "Residential & Commercial Window Cleaning",
+      "Screen & Track Detailing",
+      "Glass Restoration & Hard-Water Removal"
+    ],
+    whyChoose: [
+      "Experienced with delicate, historic glass",
+      "Attention to detail",
+      "Guaranteed satisfaction"
+    ],
+    nearbyAreas: "Dana Point • Ladera Ranch • Mission Viejo"
+  },
+  "santa-ana": {
+    title: "Window Cleaning in Santa Ana, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning in Santa Ana for residential and commercial properties.",
+    heading: "Window Cleaning Done Right",
+    intro: "Royalty Window Cleaning Santa Ana serves downtown offices, civic centers, and neighborhoods near South Coast Metro — providing spotless windows and consistent reliability.",
+    services: [
+      "Interior/Exterior Glass Cleaning",
+      "Commercial Storefront Glass",
+      "Track & Screen Cleaning"
+    ],
+    whyChoose: [
+      "Trusted by homeowners & property managers",
+      "Licensed & insured",
+      "Prompt, affordable service"
+    ],
+    nearbyAreas: "Garden Grove • Tustin • Orange"
+  },
+  "seal-beach": {
+    title: "Window Cleaning in Seal Beach, CA | Royalty Window Cleaning",
+    metaDescription: "Coastal window cleaning for Seal Beach homes & businesses. Remove salt film & enjoy spotless ocean views.",
+    heading: "Your Coastal Window Experts",
+    intro: "Royalty Window Cleaning Seal Beach restores brilliance to oceanfront homes and quaint Main Street shops with precision care.",
+    services: [
+      "Interior & Exterior Cleaning",
+      "Salt-Air & Hard-Water Treatment",
+      "Frame & Track Detailing"
+    ],
+    whyChoose: [
+      "Coastal-grade detergents",
+      "Friendly, reliable technicians",
+      "Fully insured"
+    ],
+    nearbyAreas: "Huntington Beach • Long Beach • Los Alamitos"
+  },
+  "stanton": {
+    title: "Window Cleaning in Stanton, CA | Royalty Window Cleaning",
+    metaDescription: "Affordable, professional window cleaning in Stanton for homes & storefronts.",
+    heading: "Bright Windows for Every Property",
+    intro: "Royalty Window Cleaning Stanton serves residential neighborhoods and small businesses near Beach Boulevard with spotless results and dependable service.",
+    services: [
+      "Residential & Commercial Window Cleaning",
+      "Track & Screen Detailing",
+      "Skylight & Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Prompt scheduling",
+      "Licensed & insured",
+      "Transparent pricing"
+    ],
+    nearbyAreas: "Garden Grove • Cypress • Anaheim"
+  },
+  "tustin": {
+    title: "Window Cleaning in Tustin, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning services in Tustin for residential & commercial clients.",
+    heading: "Crystal-Clear Windows in Tustin",
+    intro: "Royalty Window Cleaning Tustin serves Old Town, Tustin Ranch, and Legacy neighborhoods with streak-free cleaning and expert care.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Screen & Track Detailing",
+      "Hard-Water Stain Removal"
+    ],
+    whyChoose: [
+      "Professional, uniformed cleaners",
+      "Guaranteed satisfaction",
+      "Eco-friendly glass treatment"
+    ],
+    nearbyAreas: "Irvine • Orange • Santa Ana"
+  },
+  "villa-park": {
+    title: "Window Cleaning in Villa Park, CA | Royalty Window Cleaning",
+    metaDescription: "Residential and estate-level window cleaning in Villa Park, CA. High-quality, discreet service for homeowners.",
+    heading: "Exclusive Window Care for Villa Park Homes",
+    intro: "Royalty Window Cleaning Villa Park provides meticulous cleaning for luxury residences and hillside estates, ensuring flawless glass and preserved privacy.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Track & Screen Detail Service",
+      "Skylight and Glass Door Cleaning"
+    ],
+    whyChoose: [
+      "Personalized white-glove service",
+      "Experienced technicians with insurance coverage",
+      "Eco-safe solutions for delicate surfaces"
+    ],
+    nearbyAreas: "Orange • Tustin • Anaheim Hills"
+  },
+  "westminster": {
+    title: "Window Cleaning in Westminster, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning for Westminster homes and businesses. Trusted local technicians.",
+    heading: "Reliable Window Cleaning in Westminster",
+    intro: "Royalty Window Cleaning Westminster brightens homes, shops, and community centers from Little Saigon to Golden West College with brilliant, streak-free results.",
+    services: [
+      "Residential & Commercial Glass Cleaning",
+      "Screen, Track & Frame Detailing",
+      "Skylight and Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Licensed, insured & local",
+      "Affordable maintenance plans",
+      "100% satisfaction guaranteed"
+    ],
+    nearbyAreas: "Garden Grove • Huntington Beach • Fountain Valley"
+  },
+  "yorba-linda": {
+    title: "Window Cleaning in Yorba Linda, CA | Royalty Window Cleaning",
+    metaDescription: "Brighten your Yorba Linda home or office with Royalty Window Cleaning. Locally owned and trusted across Orange County.",
+    heading: "The Land of Gracious Living Deserves Spotless Glass",
+    intro: "Royalty Window Cleaning Yorba Linda serves residential and commercial clients throughout East Lake Village, Bryant Ranch, and Hidden Hills, keeping windows clear and inviting.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Screen & Track Detailing",
+      "Hard-Water Stain Removal",
+      "Skylight and Mirror Cleaning"
+    ],
+    whyChoose: [
+      "Locally based Orange County team",
+      "Safe eco-friendly cleaning agents",
+      "100% customer satisfaction"
+    ],
+    nearbyAreas: "Placentia • Brea • Anaheim Hills"
+  }
+};
+
 export function slugify(text: string): string {
   return text
     .toLowerCase()
