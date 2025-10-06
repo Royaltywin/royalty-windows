@@ -23,14 +23,9 @@ const Header = () => {
             <Logo />
           </Link>
           
-          <div className="flex items-center gap-4">
-            <a href="tel:951-999-4546" className="hidden md:block text-xl font-bold text-primary hover:text-accent transition-colors">
-              (951) 999-4546
-            </a>
-            <Button variant="accent" size="lg" className="hidden md:flex">
-              Get Free Quote
-            </Button>
-          </div>
+          <a href="tel:951-999-4546" className="hidden md:block text-xl font-bold text-primary hover:text-accent transition-colors">
+            (951) 999-4546
+          </a>
         </div>
 
         {/* Bottom Row: Navigation Menu */}

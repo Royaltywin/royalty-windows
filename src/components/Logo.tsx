@@ -12,7 +12,7 @@ const Logo = () => {
         <span className="font-logo text-6xl md:text-7xl lg:text-8xl text-outlined tracking-wider font-black">
           ROYALTY
         </span>
-        <span className="font-bold text-lg md:text-xl lg:text-2xl text-foreground tracking-widest mt-2">
+        <span className="font-logo text-3xl md:text-4xl lg:text-5xl text-outlined tracking-widest mt-2 font-black">
           CLEANING SERVICES
         </span>
       </div>
