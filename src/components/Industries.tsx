@@ -35,7 +35,7 @@ const industries = [
 
 const Industries = () => {
   return (
-    <section className="bg-secondary py-16 md:py-24">
+    <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-accent mb-4">
