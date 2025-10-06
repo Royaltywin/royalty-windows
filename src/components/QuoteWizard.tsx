@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
 
 const services = [
   "Window Cleaning",
@@ -15,25 +15,31 @@ const services = [
   "House Washing",
   "Gutter Cleaning",
   "Solar Panel Cleaning",
-  "Graffiti Removal",
-  "Construction Cleanup"
+  "Bird Control",
+  "Other"
 ];
 
+const formSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(100),
+  lastName: z.string().trim().min(1, "Last name is required").max(100),
+  phone: z.string().trim().min(10, "Valid phone number required").max(20),
+  email: z.string().trim().email("Valid email required").max(255),
+  address: z.string().trim().max(500).optional(),
+  notes: z.string().trim().max(1000).optional()
+});
+
 const QuoteWizard = () => {
-  const [step, setStep] = useState(1);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [showDialog, setShowDialog] = useState(false);
   const [formData, setFormData] = useState({
-    propertyType: "",
-    stories: "",
-    squareFeet: "",
     firstName: "",
     lastName: "",
     phone: "",
     email: "",
     address: "",
-    preferredDate: "",
     notes: ""
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
   const toggleService = (service: string) => {
@@ -44,259 +50,109 @@ const QuoteWizard = () => {
     );
   };
 
-  const handleNext = () => {
-    if (step === 1 && selectedServices.length === 0) {
+  const handleGetStarted = () => {
+    if (selectedServices.length === 0) {
       toast({
         title: "Please select at least one service",
         variant: "destructive"
       });
       return;
     }
-    setStep(prev => prev + 1);
+    setShowDialog(true);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
     
-    // Validation
-    if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email) {
-      toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+    // Validate using zod
+    const result = formSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
       });
+      setErrors(fieldErrors);
       return;
     }
 
-    // Here you would send the data to your backend
-    console.log("Form submitted:", { selectedServices, ...formData });
+    // Prepare data for submission (without logging sensitive info)
+    const submissionData = {
+      services: selectedServices,
+      ...result.data
+    };
     
+    // Here you would send to backend
     toast({
       title: "Quote Request Received!",
       description: "We'll contact you within 24 hours with your free estimate.",
     });
+    
+    setShowDialog(false);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      address: "",
+      notes: ""
+    });
+    setSelectedServices([]);
   };
 
-  const totalSteps = 3;
-  const progress = (step / totalSteps) * 100;
-
   return (
-    <Card className="w-full max-w-4xl mx-auto p-8 bg-accent/10 border-4 border-accent shadow-accent-glow">
-      {/* Progress Bar */}
-      <div className="mb-8">
-        <div className="flex justify-between mb-2">
-          <span className="text-sm font-semibold text-foreground">
-            Step {step} of {totalSteps}
-          </span>
-          <span className="text-sm font-semibold text-foreground">{Math.round(progress)}%</span>
-        </div>
-        <div className="w-full h-3 bg-muted rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-primary transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      </div>
-
-      <form onSubmit={handleSubmit}>
-        {/* Step 1: Select Services */}
-        {step === 1 && (
-          <div className="space-y-6">
-            <div className="text-center">
-              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-2">
-                What services do you need?
-              </h3>
-              <p className="text-muted-foreground">
-                Select all that apply
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <>
+      <Card className="w-full max-w-2xl mx-auto p-8 md:p-12 bg-[hsl(180,70%,70%)] border-none shadow-2xl">
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl md:text-4xl font-black text-[hsl(220,20%,20%)]">
+            Start Your Free Estimate
+          </h3>
+          
+          <div className="space-y-4">
+            <p className="text-lg font-bold text-[hsl(350,90%,50%)] uppercase tracking-wide">
+              I'm Interested In:
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-3">
               {services.map((service) => (
                 <button
                   key={service}
                   type="button"
                   onClick={() => toggleService(service)}
-                  className={`flex items-center gap-3 p-4 border-2 rounded-xl transition-all duration-200 ${
+                  className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 border-2 ${
                     selectedServices.includes(service)
-                      ? "bg-accent border-accent text-accent-foreground"
-                      : "bg-background border-accent/30 hover:border-accent"
+                      ? "bg-[hsl(220,20%,20%)] text-white border-[hsl(220,20%,20%)] scale-105"
+                      : "bg-white text-[hsl(220,20%,20%)] border-white hover:scale-105 hover:shadow-lg"
                   }`}
                 >
-                  <CheckCircle
-                    className={`w-5 h-5 ${
-                      selectedServices.includes(service) ? "text-accent-foreground" : "text-muted-foreground"
-                    }`}
-                  />
-                  <span className="font-semibold">{service}</span>
+                  {service}
                 </button>
               ))}
             </div>
           </div>
-        )}
 
-        {/* Step 2: Property Details */}
-        {step === 2 && (
-          <div className="space-y-6">
-            <div className="text-center mb-6">
-              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-2">
-                Tell us about your property
-              </h3>
-            </div>
+          <Button
+            onClick={handleGetStarted}
+            size="lg"
+            className="bg-[hsl(350,90%,50%)] hover:bg-[hsl(350,90%,45%)] text-white font-bold text-lg px-12 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105"
+          >
+            Get Started
+          </Button>
+        </div>
+      </Card>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="propertyType">Property Type *</Label>
-                <Select
-                  value={formData.propertyType}
-                  onValueChange={(value) =>
-                    setFormData({ ...formData, propertyType: value })
-                  }
-                >
-                  <SelectTrigger id="propertyType">
-                    <SelectValue placeholder="Select type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="residential">Residential</SelectItem>
-                    <SelectItem value="commercial">Commercial</SelectItem>
-                    <SelectItem value="industrial">Industrial</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+      <Dialog open={showDialog} onOpenChange={setShowDialog}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Get Your Free Estimate</DialogTitle>
+          </DialogHeader>
 
-              <div className="space-y-2">
-                <Label htmlFor="stories">Number of Stories</Label>
-                <Input
-                  id="stories"
-                  type="number"
-                  min="1"
-                  placeholder="1"
-                  value={formData.stories}
-                  onChange={(e) =>
-                    setFormData({ ...formData, stories: e.target.value })
-                  }
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="squareFeet">Approximate Square Feet</Label>
-                <Input
-                  id="squareFeet"
-                  type="number"
-                  placeholder="2000"
-                  value={formData.squareFeet}
-                  onChange={(e) =>
-                    setFormData({ ...formData, squareFeet: e.target.value })
-                  }
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="preferredDate">Preferred Service Date</Label>
-                <Input
-                  id="preferredDate"
-                  type="date"
-                  value={formData.preferredDate}
-                  onChange={(e) =>
-                    setFormData({ ...formData, preferredDate: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="address">Property Address</Label>
-              <Input
-                id="address"
-                placeholder="123 Main St, City, CA 92886"
-                value={formData.address}
-                onChange={(e) =>
-                  setFormData({ ...formData, address: e.target.value })
-                }
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Step 3: Contact Information */}
-        {step === 3 && (
-          <div className="space-y-6">
-            <div className="text-center mb-6">
-              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-2">
-                How can we reach you?
-              </h3>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="firstName">First Name *</Label>
-                <Input
-                  id="firstName"
-                  placeholder="John"
-                  required
-                  value={formData.firstName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, firstName: e.target.value })
-                  }
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="lastName">Last Name *</Label>
-                <Input
-                  id="lastName"
-                  placeholder="Doe"
-                  required
-                  value={formData.lastName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, lastName: e.target.value })
-                  }
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone *</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="(951) 999-4546"
-                  required
-                  value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="notes">Additional Notes</Label>
-              <Textarea
-                id="notes"
-                placeholder="Tell us more about your cleaning needs..."
-                rows={4}
-                value={formData.notes}
-                onChange={(e) =>
-                  setFormData({ ...formData, notes: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="bg-accent/20 border-2 border-accent rounded-xl p-6">
-              <h4 className="font-bold text-foreground mb-3">Your Selected Services:</h4>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="bg-accent/20 border-2 border-accent rounded-xl p-4">
+              <p className="font-semibold mb-2">Selected Services:</p>
               <div className="flex flex-wrap gap-2">
                 {selectedServices.map((service) => (
                   <span
@@ -308,54 +164,132 @@ const QuoteWizard = () => {
                 ))}
               </div>
             </div>
-          </div>
-        )}
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-between mt-8">
-          {step > 1 && (
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => setStep(prev => prev - 1)}
-              className="gap-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back
-            </Button>
-          )}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="firstName">First Name *</Label>
+                <Input
+                  id="firstName"
+                  placeholder="John"
+                  value={formData.firstName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, firstName: e.target.value })
+                  }
+                  className={errors.firstName ? "border-destructive" : ""}
+                />
+                {errors.firstName && (
+                  <p className="text-sm text-destructive">{errors.firstName}</p>
+                )}
+              </div>
 
-          {step < totalSteps ? (
-            <Button
-              type="button"
-              variant="accent"
-              onClick={handleNext}
-              className="ml-auto gap-2"
-            >
-              Next
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          ) : (
-            <Button
-              type="submit"
-              variant="accent"
-              className="ml-auto"
-            >
-              Get Your Free Estimate
-            </Button>
-          )}
-        </div>
+              <div className="space-y-2">
+                <Label htmlFor="lastName">Last Name *</Label>
+                <Input
+                  id="lastName"
+                  placeholder="Doe"
+                  value={formData.lastName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, lastName: e.target.value })
+                  }
+                  className={errors.lastName ? "border-destructive" : ""}
+                />
+                {errors.lastName && (
+                  <p className="text-sm text-destructive">{errors.lastName}</p>
+                )}
+              </div>
 
-        {step === totalSteps && (
-          <p className="text-sm text-muted-foreground text-center mt-4">
-            Or call us directly at{" "}
-            <a href="tel:+19519994546" className="text-accent font-bold hover:underline">
-              (951) 999-4546
-            </a>
-          </p>
-        )}
-      </form>
-    </Card>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone *</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="(951) 999-4546"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  className={errors.phone ? "border-destructive" : ""}
+                />
+                {errors.phone && (
+                  <p className="text-sm text-destructive">{errors.phone}</p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">Email *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className={errors.email ? "border-destructive" : ""}
+                />
+                {errors.email && (
+                  <p className="text-sm text-destructive">{errors.email}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="address">Property Address (Optional)</Label>
+              <Input
+                id="address"
+                placeholder="123 Main St, City, CA 92886"
+                value={formData.address}
+                onChange={(e) =>
+                  setFormData({ ...formData, address: e.target.value })
+                }
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="notes">Additional Notes (Optional)</Label>
+              <Textarea
+                id="notes"
+                placeholder="Tell us more about your cleaning needs..."
+                rows={4}
+                value={formData.notes}
+                onChange={(e) =>
+                  setFormData({ ...formData, notes: e.target.value })
+                }
+                className={errors.notes ? "border-destructive" : ""}
+              />
+              {errors.notes && (
+                <p className="text-sm text-destructive">{errors.notes}</p>
+              )}
+            </div>
+
+            <div className="flex gap-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setShowDialog(false)}
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                variant="accent"
+                className="flex-1"
+              >
+                Submit Request
+              </Button>
+            </div>
+
+            <p className="text-sm text-muted-foreground text-center">
+              Or call us directly at{" "}
+              <a href="tel:+19519994546" className="text-accent font-bold hover:underline">
+                (951) 999-4546
+              </a>
+            </p>
+          </form>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
