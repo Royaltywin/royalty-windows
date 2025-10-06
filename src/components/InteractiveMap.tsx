@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Button } from '@/components/ui/button';
-import { Navigation } from 'lucide-react';
+import { Navigation, MapPin } from 'lucide-react';
 import { counties } from '@/data/locations';
+import { Link } from 'react-router-dom';
+import { Card } from '@/components/ui/card';
 
 // Note: For production, add your Mapbox token to Supabase Edge Function Secrets
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'; // Demo token
@@ -12,70 +14,80 @@ const InteractiveMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapError, setMapError] = useState(false);
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
 
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/light-v11',
-      center: [-117.8265, 33.6846], // Orange County center
-      zoom: 7.5,
-      pitch: 0,
-    });
-
-    map.current.addControl(
-      new mapboxgl.NavigationControl({
-        visualizePitch: false,
-      }),
-      'top-right'
-    );
-
-    map.current.on('load', () => {
-      setMapLoaded(true);
-
-      // Add county markers
-      Object.values(counties).forEach((county) => {
-        // Approximate coordinates for each county center
-        const coordinates = getCountyCoordinates(county.name);
-        
-        // Create custom marker element
-        const el = document.createElement('div');
-        el.className = 'county-marker';
-        el.style.backgroundColor = county.color;
-        el.style.width = '30px';
-        el.style.height = '30px';
-        el.style.borderRadius = '50%';
-        el.style.border = '3px solid white';
-        el.style.cursor = 'pointer';
-        el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-        el.style.transition = 'transform 0.2s';
-        
-        el.addEventListener('mouseenter', () => {
-          el.style.transform = 'scale(1.2)';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-          el.style.transform = 'scale(1)';
-        });
-
-        // Create popup
-        const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
-          .setHTML(`
-            <div style="padding: 8px;">
-              <h3 style="font-weight: bold; margin: 0 0 8px 0; color: ${county.color};">${county.name}</h3>
-              <p style="margin: 0; font-size: 14px; color: #666;">${county.cities.length} cities served</p>
-            </div>
-          `);
-
-        new mapboxgl.Marker(el)
-          .setLngLat(coordinates)
-          .setPopup(popup)
-          .addTo(map.current!);
+    try {
+      mapboxgl.accessToken = MAPBOX_TOKEN;
+      
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/light-v11',
+        center: [-117.8265, 33.6846], // Orange County center
+        zoom: 7.5,
+        pitch: 0,
       });
-    });
+
+      map.current.addControl(
+        new mapboxgl.NavigationControl({
+          visualizePitch: false,
+        }),
+        'top-right'
+      );
+
+      map.current.on('load', () => {
+        setMapLoaded(true);
+
+        // Add county markers
+        Object.values(counties).forEach((county) => {
+          // Approximate coordinates for each county center
+          const coordinates = getCountyCoordinates(county.name);
+          
+          // Create custom marker element
+          const el = document.createElement('div');
+          el.className = 'county-marker';
+          el.style.backgroundColor = county.color;
+          el.style.width = '30px';
+          el.style.height = '30px';
+          el.style.borderRadius = '50%';
+          el.style.border = '3px solid white';
+          el.style.cursor = 'pointer';
+          el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+          el.style.transition = 'transform 0.2s';
+          
+          el.addEventListener('mouseenter', () => {
+            el.style.transform = 'scale(1.2)';
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            el.style.transform = 'scale(1)';
+          });
+
+          // Create popup
+          const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
+            .setHTML(`
+              <div style="padding: 8px;">
+                <h3 style="font-weight: bold; margin: 0 0 8px 0; color: ${county.color};">${county.name}</h3>
+                <p style="margin: 0; font-size: 14px; color: #666;">${county.cities.length} cities served</p>
+              </div>
+            `);
+
+          new mapboxgl.Marker(el)
+            .setLngLat(coordinates)
+            .setPopup(popup)
+            .addTo(map.current!);
+        });
+      });
+
+      map.current.on('error', () => {
+        setMapError(true);
+      });
+    } catch (error) {
+      console.error('Map initialization error:', error);
+      setMapError(true);
+    }
 
     return () => {
       map.current?.remove();
@@ -120,6 +132,48 @@ const InteractiveMap = () => {
       alert('Geolocation is not supported by your browser.');
     }
   };
+
+  // Fallback UI when map fails to load
+  if (mapError) {
+    return (
+      <div className="w-full rounded-2xl overflow-hidden border-4 border-border bg-background">
+        <div className="p-8">
+          <h2 className="text-3xl font-bold mb-6 text-center">Service Areas</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.values(counties).map((county) => {
+              const slug = county.name.toLowerCase().replace(' county', '').replace(' ', '-');
+              return (
+                <Link key={county.name} to={`/locations/${slug}`}>
+                  <Card className="p-6 hover:shadow-lg transition-all cursor-pointer group border-2 hover:border-primary">
+                    <div className="flex items-start gap-4">
+                      <div
+                        className="w-12 h-12 rounded-full border-3 border-white shadow-md group-hover:scale-110 transition-transform flex items-center justify-center"
+                        style={{ backgroundColor: county.color }}
+                      >
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                          {county.name}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mb-3">
+                          {county.cities.length} cities served
+                        </p>
+                        <p className="text-xs text-muted-foreground line-clamp-2">
+                          {county.cities.slice(0, 3).join(', ')}
+                          {county.cities.length > 3 && ` and ${county.cities.length - 3} more...`}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-border">
