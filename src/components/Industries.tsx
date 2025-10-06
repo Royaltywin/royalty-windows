@@ -35,13 +35,13 @@ const industries = [
 
 const Industries = () => {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-[#001f3f] py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-accent mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
             Industries We Service
           </h2>
-          <p className="text-xl text-accent/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Professional cleaning solutions across all sectors
           </p>
         </div>
