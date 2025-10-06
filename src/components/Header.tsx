@@ -21,11 +21,6 @@ const Header = () => {
         <nav className="flex justify-center w-full">
           <NavigationMenu>
             <NavigationMenuList className="flex-wrap justify-center">
-              <NavigationMenuItem>
-                <Link to="/">
-                  
-                </Link>
-              </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-semibold">
