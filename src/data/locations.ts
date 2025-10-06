@@ -8,14 +8,15 @@ export const counties: Record<string, County> = {
   orange: {
     name: "Orange County",
     cities: [
-      "Aliso Viejo", "Anaheim", "Brea", "Buena Park", "Costa Mesa", "Cypress",
-      "Dana Point", "Fountain Valley", "Fullerton", "Garden Grove",
+      "Aliso Viejo", "Anaheim", "Brea", "Buena Park", "Capistrano Beach", 
+      "Corona Del Mar", "Costa Mesa", "Coto de Caza", "Cypress", "Dana Point", 
+      "Foothill Ranch", "Fountain Valley", "Fullerton", "Garden Grove",
       "Huntington Beach", "Irvine", "La Habra", "La Palma", "Laguna Beach",
-      "Laguna Hills", "Laguna Niguel", "Laguna Woods", "Lake Forest",
-      "Los Alamitos", "Mission Viejo", "Newport Beach", "Orange", "Placentia",
-      "Rancho Santa Margarita", "San Clemente", "San Juan Capistrano",
-      "Santa Ana", "Seal Beach", "Stanton", "Tustin", "Villa Park",
-      "Westminster", "Yorba Linda"
+      "Laguna Hills", "Laguna Niguel", "Laguna Woods", "Lake Forest", "Los Alamitos",
+      "Los Flores", "Mission Viejo", "Newport Beach", "Newport Coast", "Orange", 
+      "Placentia", "Rancho Santa Margarita", "San Clemente", "San Juan Capistrano",
+      "Santa Ana", "Seal Beach", "Silverado", "Stanton", "Talega", "Trabuco Canyon",
+      "Tustin", "Villa Park", "Westminster", "Yorba Linda"
     ],
     color: "hsl(328 100% 54%)" // Magenta
   },
@@ -801,6 +802,222 @@ export const cityWindowCleaningContent: Record<string, CityWindowCleaningContent
       "100% customer satisfaction"
     ],
     nearbyAreas: "Placentia • Brea • Anaheim Hills"
+  },
+  "capistrano-beach": {
+    title: "Window Cleaning in Capistrano Beach, CA | Royalty Window Cleaning",
+    metaDescription: "Coastal window cleaning in Capistrano Beach for beachfront homes and businesses. Remove salt residue with expert care.",
+    heading: "Beachfront Window Cleaning Experts",
+    intro: "Royalty Window Cleaning Capistrano Beach specializes in coastal glass care, removing salt spray and ocean mist from beautiful beach homes and properties.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Salt-Air & Ocean Spray Removal",
+      "Screen & Track Detailing",
+      "Glass Restoration"
+    ],
+    whyChoose: [
+      "Coastal glass specialists",
+      "Eco-friendly, streak-free finish",
+      "Licensed, insured & experienced"
+    ],
+    nearbyAreas: "Dana Point • San Clemente • San Juan Capistrano"
+  },
+  "corona-del-mar": {
+    title: "Window Cleaning in Corona Del Mar, CA | Royalty Window Cleaning",
+    metaDescription: "Premium window cleaning in Corona Del Mar for luxury coastal homes. Expert salt-air treatment and spotless results.",
+    heading: "Luxury Window Care in Corona Del Mar",
+    intro: "Royalty Window Cleaning Corona Del Mar provides premium service for coastal estates, removing salt air residue while maintaining the highest standards of care.",
+    services: [
+      "Residential & Commercial Window Cleaning",
+      "Salt-Air Residue Removal",
+      "Hard-Water Stain Treatment",
+      "Premium Glass Care"
+    ],
+    whyChoose: [
+      "White-glove service for luxury homes",
+      "Experienced with coastal properties",
+      "100% satisfaction guaranteed"
+    ],
+    nearbyAreas: "Newport Beach • Newport Coast • Laguna Beach"
+  },
+  "coto-de-caza": {
+    title: "Window Cleaning in Coto de Caza, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning in Coto de Caza for estate homes and gated communities. Discreet, reliable service.",
+    heading: "Estate Window Cleaning in Coto de Caza",
+    intro: "Royalty Window Cleaning Coto de Caza serves luxury homes and estate properties with personalized, professional window cleaning services.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Track & Screen Detailing",
+      "Skylight & Glass Door Cleaning",
+      "Estate-Level Service"
+    ],
+    whyChoose: [
+      "Discreet, professional service",
+      "Experienced with luxury homes",
+      "Licensed, insured & background-checked"
+    ],
+    nearbyAreas: "Rancho Santa Margarita • Mission Viejo • Trabuco Canyon"
+  },
+  "foothill-ranch": {
+    title: "Window Cleaning in Foothill Ranch, CA | Royalty Window Cleaning",
+    metaDescription: "Reliable window cleaning in Foothill Ranch for homes and businesses. Professional service with guaranteed results.",
+    heading: "Professional Window Cleaning in Foothill Ranch",
+    intro: "Royalty Window Cleaning Foothill Ranch delivers spotless windows for residential communities and businesses throughout the area.",
+    services: [
+      "Residential Window Cleaning",
+      "Commercial Glass Cleaning",
+      "Screen & Track Detailing",
+      "Hard-Water Stain Removal"
+    ],
+    whyChoose: [
+      "Prompt, reliable service",
+      "Affordable rates",
+      "100% satisfaction guaranteed"
+    ],
+    nearbyAreas: "Lake Forest • Portola Hills • Rancho Santa Margarita"
+  },
+  "laguna-woods": {
+    title: "Window Cleaning in Laguna Woods, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning in Laguna Woods for retirement communities and homes. Gentle, professional service.",
+    heading: "Trusted Window Cleaning in Laguna Woods",
+    intro: "Royalty Window Cleaning Laguna Woods provides careful, professional window cleaning for retirement communities and residential properties.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Senior-Friendly Service",
+      "Screen & Track Cleaning",
+      "Regular Maintenance Plans"
+    ],
+    whyChoose: [
+      "Experienced with retirement communities",
+      "Friendly, courteous technicians",
+      "Flexible scheduling"
+    ],
+    nearbyAreas: "Laguna Hills • Aliso Viejo • Lake Forest"
+  },
+  "lake-forest": {
+    title: "Window Cleaning in Lake Forest, CA | Royalty Window Cleaning",
+    metaDescription: "Professional window cleaning in Lake Forest for homes and offices. Fast, reliable, and affordable service.",
+    heading: "Lake Forest Window Cleaning Experts",
+    intro: "Royalty Window Cleaning Lake Forest serves residential communities and businesses with professional, streak-free window cleaning.",
+    services: [
+      "Residential Window Cleaning",
+      "Commercial Glass Washing",
+      "Track & Screen Detailing",
+      "Skylight Cleaning"
+    ],
+    whyChoose: [
+      "Local Orange County team",
+      "Competitive pricing",
+      "Satisfaction guaranteed"
+    ],
+    nearbyAreas: "Mission Viejo • Foothill Ranch • Laguna Hills"
+  },
+  "los-alamitos": {
+    title: "Window Cleaning in Los Alamitos, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning in Los Alamitos for residential and commercial properties. Professional results every time.",
+    heading: "Professional Window Cleaning in Los Alamitos",
+    intro: "Royalty Window Cleaning Los Alamitos brightens homes and businesses throughout the community with expert window cleaning services.",
+    services: [
+      "Interior & Exterior Window Cleaning",
+      "Commercial Storefront Glass",
+      "Screen & Track Cleaning",
+      "Regular Maintenance"
+    ],
+    whyChoose: [
+      "Licensed & insured",
+      "Experienced local team",
+      "Fair, transparent pricing"
+    ],
+    nearbyAreas: "Seal Beach • Cypress • Rossmoor"
+  },
+  "los-flores": {
+    title: "Window Cleaning in Los Flores, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning in Los Flores for homes and properties. Quality service with attention to detail.",
+    heading: "Quality Window Cleaning in Los Flores",
+    intro: "Royalty Window Cleaning Los Flores provides thorough, professional window cleaning for homes and properties in this beautiful community.",
+    services: [
+      "Residential Window Cleaning",
+      "Interior & Exterior Service",
+      "Screen & Track Detailing",
+      "Hard-Water Removal"
+    ],
+    whyChoose: [
+      "Attention to detail",
+      "Reliable scheduling",
+      "Eco-friendly products"
+    ],
+    nearbyAreas: "Rancho Santa Margarita • Mission Viejo • Las Flores"
+  },
+  "newport-coast": {
+    title: "Window Cleaning in Newport Coast, CA | Royalty Window Cleaning",
+    metaDescription: "Luxury window cleaning in Newport Coast for coastal estates. Premium service with ocean-view expertise.",
+    heading: "Premium Coastal Window Care",
+    intro: "Royalty Window Cleaning Newport Coast specializes in luxury coastal properties, providing meticulous care for ocean-view estates and hillside homes.",
+    services: [
+      "Luxury Residential Window Cleaning",
+      "Salt-Air & Hard-Water Treatment",
+      "Glass Restoration",
+      "Estate-Level Service"
+    ],
+    whyChoose: [
+      "White-glove service for luxury properties",
+      "Coastal glass experts",
+      "Discreet, professional technicians"
+    ],
+    nearbyAreas: "Newport Beach • Corona Del Mar • Laguna Beach"
+  },
+  "silverado": {
+    title: "Window Cleaning in Silverado, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning in Silverado Canyon for mountain and rural homes. Professional service for unique properties.",
+    heading: "Mountain Home Window Cleaning",
+    intro: "Royalty Window Cleaning Silverado serves canyon and mountain homes with professional window cleaning adapted to unique rural properties.",
+    services: [
+      "Residential Window Cleaning",
+      "Rural Property Service",
+      "Screen & Track Cleaning",
+      "Hard-Water & Dust Removal"
+    ],
+    whyChoose: [
+      "Experience with rural properties",
+      "Flexible scheduling",
+      "Licensed & insured"
+    ],
+    nearbyAreas: "Silverado Canyon • Modjeska Canyon • Irvine"
+  },
+  "talega": {
+    title: "Window Cleaning in Talega, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning in Talega for modern homes and communities. Professional, reliable service.",
+    heading: "Talega Window Cleaning Services",
+    intro: "Royalty Window Cleaning Talega serves this master-planned community with professional window cleaning for modern homes and properties.",
+    services: [
+      "Residential Window Cleaning",
+      "Interior & Exterior Service",
+      "Screen & Track Detailing",
+      "Regular Maintenance Plans"
+    ],
+    whyChoose: [
+      "HOA-approved service",
+      "Professional, uniformed crews",
+      "100% satisfaction guaranteed"
+    ],
+    nearbyAreas: "San Clemente • San Juan Capistrano • Dana Point"
+  },
+  "trabuco-canyon": {
+    title: "Window Cleaning in Trabuco Canyon, CA | Royalty Window Cleaning",
+    metaDescription: "Window cleaning in Trabuco Canyon for hillside homes and rural properties. Expert service for unique locations.",
+    heading: "Canyon & Hillside Window Cleaning",
+    intro: "Royalty Window Cleaning Trabuco Canyon provides expert window cleaning for canyon homes, hillside properties, and rural estates.",
+    services: [
+      "Residential Window Cleaning",
+      "Hillside & Canyon Properties",
+      "Hard-Water & Dust Removal",
+      "Screen & Track Cleaning"
+    ],
+    whyChoose: [
+      "Experienced with hillside properties",
+      "Safe equipment for difficult access",
+      "Reliable, professional service"
+    ],
+    nearbyAreas: "Rancho Santa Margarita • Coto de Caza • Mission Viejo"
   }
 };
 

@@ -45,6 +45,18 @@ import TustinWindowCleaning from "./pages/cities/TustinWindowCleaning";
 import VillaParkWindowCleaning from "./pages/cities/VillaParkWindowCleaning";
 import WestminsterWindowCleaning from "./pages/cities/WestminsterWindowCleaning";
 import YorbaLindaWindowCleaning from "./pages/cities/YorbaLindaWindowCleaning";
+import CapistranoBeachWindowCleaning from "./pages/cities/CapistranoBeachWindowCleaning";
+import CoronaDelMarWindowCleaning from "./pages/cities/CoronaDelMarWindowCleaning";
+import CotoDeCazaWindowCleaning from "./pages/cities/CotoDeCazaWindowCleaning";
+import FoothillRanchWindowCleaning from "./pages/cities/FoothillRanchWindowCleaning";
+import LagunaWoodsWindowCleaning from "./pages/cities/LagunaWoodsWindowCleaning";
+import LakeForestWindowCleaning from "./pages/cities/LakeForestWindowCleaning";
+import LosAlamitosWindowCleaning from "./pages/cities/LosAlamitosWindowCleaning";
+import LosFloresWindowCleaning from "./pages/cities/LosFloresWindowCleaning";
+import NewportCoastWindowCleaning from "./pages/cities/NewportCoastWindowCleaning";
+import SilveradoWindowCleaning from "./pages/cities/SilveradoWindowCleaning";
+import TalegaWindowCleaning from "./pages/cities/TalegaWindowCleaning";
+import TrabucoCanyonWindowCleaning from "./pages/cities/TrabucoCanyonWindowCleaning";
 
 const queryClient = new QueryClient();
 
@@ -95,6 +107,18 @@ const App = () => (
           <Route path="/window-cleaning/villa-park" element={<VillaParkWindowCleaning />} />
           <Route path="/window-cleaning/westminster" element={<WestminsterWindowCleaning />} />
           <Route path="/window-cleaning/yorba-linda" element={<YorbaLindaWindowCleaning />} />
+          <Route path="/window-cleaning/capistrano-beach" element={<CapistranoBeachWindowCleaning />} />
+          <Route path="/window-cleaning/corona-del-mar" element={<CoronaDelMarWindowCleaning />} />
+          <Route path="/window-cleaning/coto-de-caza" element={<CotoDeCazaWindowCleaning />} />
+          <Route path="/window-cleaning/foothill-ranch" element={<FoothillRanchWindowCleaning />} />
+          <Route path="/window-cleaning/laguna-woods" element={<LagunaWoodsWindowCleaning />} />
+          <Route path="/window-cleaning/lake-forest" element={<LakeForestWindowCleaning />} />
+          <Route path="/window-cleaning/los-alamitos" element={<LosAlamitosWindowCleaning />} />
+          <Route path="/window-cleaning/los-flores" element={<LosFloresWindowCleaning />} />
+          <Route path="/window-cleaning/newport-coast" element={<NewportCoastWindowCleaning />} />
+          <Route path="/window-cleaning/silverado" element={<SilveradoWindowCleaning />} />
+          <Route path="/window-cleaning/talega" element={<TalegaWindowCleaning />} />
+          <Route path="/window-cleaning/trabuco-canyon" element={<TrabucoCanyonWindowCleaning />} />
           <Route path="/:service/:city" element={<CityService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
