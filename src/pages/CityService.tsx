@@ -2,6 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceBookingForm from "@/components/ServiceBookingForm";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { counties, services, slugify } from "@/data/locations";
 import { MapPin, Phone, ArrowRight } from "lucide-react";
@@ -33,6 +34,12 @@ const CityService = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title={`${pageTitle} | Royalty Cleaning Services`}
+        description={metaDescription}
+        url={`https://getroyaltyservices.com/${service}/${city}`}
+        type="LocalBusiness"
+      />
       <Header />
 
       <main className="container mx-auto px-4 md:px-8 py-16 space-y-16">

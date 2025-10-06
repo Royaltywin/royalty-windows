@@ -1,4 +1,5 @@
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+import SEOHead from "@/components/SEOHead";
 import heroImage from "@/assets/hero-cleaning-team.jpg";
 
 const WindowCleaning = () => {
@@ -38,7 +39,13 @@ const WindowCleaning = () => {
   ];
 
   return (
-    <ServicePageTemplate
+    <>
+      <SEOHead
+        title="Professional Window Cleaning Services | Royalty Cleaning"
+        description="Crystal-clear window cleaning for residential and commercial properties in Southern California. Streak-free results, eco-friendly solutions. Get a free estimate today!"
+        url="https://getroyaltyservices.com/window-cleaning"
+      />
+      <ServicePageTemplate
       title="Window Cleaning Services"
       description="Professional window cleaning for crystal-clear views and lasting shine"
       heroImage={heroImage}
@@ -63,6 +70,7 @@ const WindowCleaning = () => {
         </p>
       </section>
     </ServicePageTemplate>
+    </>
   );
 };
 

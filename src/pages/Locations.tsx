@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CountyMap from "@/components/CountyMap";
+import SEOHead from "@/components/SEOHead";
 import { counties, services, slugify } from "@/data/locations";
 import { MapPin } from "lucide-react";
 
 const Locations = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Service Areas - Southern California Cleaning Services | Royalty"
+        description="Professional cleaning services across Southern California. Serving Orange, Riverside, San Bernardino, San Diego, Los Angeles, and Ventura Counties."
+        url="https://getroyaltyservices.com/locations"
+      />
       <Header />
 
       <main className="container mx-auto px-4 md:px-8 py-16 space-y-16">
