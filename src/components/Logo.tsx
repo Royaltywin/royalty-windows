@@ -2,7 +2,7 @@ import royaltyLogo from "@/assets/royalty-logo.jpg";
 
 const Logo = () => {
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-1">
       <div className="flex items-center gap-6">
         <img 
           src={royaltyLogo} 
