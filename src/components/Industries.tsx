@@ -52,15 +52,15 @@ const Industries = () => {
             return (
               <div
                 key={industry.title}
-                className="bg-background border-4 border-secondary rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
+                className="bg-[#39ff14] border-4 border-[#ff00ff] rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
               >
-                <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-8 h-8 text-accent" />
+                <div className="w-16 h-16 bg-[#ff00ff] rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="w-8 h-8 text-[#39ff14]" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">
+                <h3 className="text-xl font-bold text-black mb-2">
                   {industry.title}
                 </h3>
-                <p className="text-foreground">
+                <p className="text-black">
                   {industry.description}
                 </p>
               </div>
