@@ -52,22 +52,22 @@ const Services = () => {
         </p>
       </div>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {services.map((service) => {
           const Icon = service.icon;
           return (
             <Link
               key={service.title}
               to={service.link}
-              className="bg-accent border-4 border-secondary hover:border-primary rounded-2xl p-6 transition-all duration-300 hover:shadow-accent-glow group"
+              className="bg-accent border-4 border-secondary hover:border-primary rounded-2xl p-8 transition-all duration-300 hover:shadow-accent-glow group"
             >
-              <div className="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Icon className="w-8 h-8 text-accent" />
+              <div className="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Icon className="w-10 h-10 text-accent" />
               </div>
-              <h3 className="text-xl font-bold text-secondary mb-2">
+              <h3 className="text-2xl font-bold text-secondary mb-3">
                 {service.title}
               </h3>
-              <p className="text-secondary">
+              <p className="text-lg text-secondary">
                 {service.description}
               </p>
             </Link>

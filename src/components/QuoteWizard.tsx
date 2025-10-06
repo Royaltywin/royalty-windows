@@ -105,9 +105,9 @@ const QuoteWizard = () => {
 
   return (
     <>
-      <Card className="w-full max-w-2xl mx-auto p-8 md:p-12 bg-[hsl(180,70%,70%)] border-none shadow-2xl">
-        <div className="text-center space-y-6">
-          <h3 className="text-3xl md:text-4xl font-black text-[hsl(220,20%,20%)]">
+      <Card className="w-full max-w-md mx-auto p-6 md:p-8 bg-[hsl(180,70%,70%)] border-none shadow-2xl h-fit">
+        <div className="text-center space-y-4">
+          <h3 className="text-2xl md:text-3xl font-black text-[hsl(220,20%,20%)]">
             Start Your Free Estimate
           </h3>
           
