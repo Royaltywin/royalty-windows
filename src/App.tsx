@@ -11,6 +11,7 @@ import SolarPanelCleaning from "./pages/SolarPanelCleaning";
 import RoofCleaning from "./pages/RoofCleaning";
 import GraffitiRemoval from "./pages/GraffitiRemoval";
 import ConstructionCleanup from "./pages/ConstructionCleanup";
+import GutterCleaning from "./pages/GutterCleaning";
 import Locations from "./pages/Locations";
 import CityService from "./pages/CityService";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/solar-panel-cleaning" element={<SolarPanelCleaning />} />
           <Route path="/roof-cleaning" element={<RoofCleaning />} />
           <Route path="/graffiti-removal" element={<GraffitiRemoval />} />
+          <Route path="/gutter-cleaning" element={<GutterCleaning />} />
           <Route path="/construction-cleanup" element={<ConstructionCleanup />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/:service/:city" element={<CityService />} />

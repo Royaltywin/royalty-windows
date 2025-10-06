@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import ServiceBookingForm from "@/components/ServiceBookingForm";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { counties, services, slugify } from "@/data/locations";
-import { MapPin, Phone, ArrowRight } from "lucide-react";
+import { counties, services, slugify, serviceContent } from "@/data/locations";
+import { MapPin, Phone, ArrowRight, CheckCircle } from "lucide-react";
 
 const CityService = () => {
   const { service, city } = useParams<{ service: string; city: string }>();
@@ -29,8 +29,17 @@ const CityService = () => {
     return <Navigate to="/locations" replace />;
   }
 
-  const pageTitle = `${serviceData.name} in ${cityName}`;
-  const metaDescription = `Professional ${serviceData.name.toLowerCase()} services in ${cityName}, ${countyName}. Licensed, insured, and satisfaction guaranteed. Call (951) 999-4546 for a free estimate.`;
+  const content = serviceContent[service || ""] || {
+    title: `${serviceData.name} Services`,
+    metaDescription: `Professional ${serviceData.name.toLowerCase()} services in ${cityName}, ${countyName}. Licensed, insured, and satisfaction guaranteed.`,
+    heroHeading: `Professional ${serviceData.name} in ${cityName}`,
+    heroSubheading: `Royalty Cleaning Services delivers expert ${serviceData.name.toLowerCase()} for homes and businesses in ${cityName}.`,
+    services: [],
+    whyChoose: []
+  };
+
+  const pageTitle = `${content.title} in ${cityName}`;
+  const metaDescription = `${content.metaDescription.replace(/\.$/, '')} in ${cityName}, ${countyName}.`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,18 +59,18 @@ const CityService = () => {
             <span className="text-lg font-semibold">{cityName}, {countyName}</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-foreground mb-6 text-3d">
-            {pageTitle}
+          <h1 className="text-4xl md:text-6xl font-black text-foreground mb-6 text-3d">
+            {content.heroHeading}
           </h1>
           
-          <p className="text-xl text-muted-foreground mb-8">
-            {metaDescription}
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            {content.heroSubheading.replace(/\[City\]/g, cityName).replace(/\[County\]/g, countyName)}
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
             <Button variant="accent" size="lg" asChild>
               <a href="#quote">
-                Get Free Quote <ArrowRight className="ml-2 w-5 h-5" />
+                Get Free Estimate <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
@@ -72,53 +81,52 @@ const CityService = () => {
           </div>
         </section>
 
-        {/* Service Overview */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-6">
-            Expert {serviceData.name} in {cityName}
-          </h2>
-          
-          <div className="prose prose-lg max-w-none text-muted-foreground">
-            <p className="text-lg">
-              Looking for professional <strong>{serviceData.name.toLowerCase()} services in {cityName}</strong>? 
-              Royalty Cleaning Services is your trusted local provider in {countyName}. We deliver 
-              exceptional results for residential and commercial properties throughout {cityName} and 
-              surrounding areas.
-            </p>
+        {/* Services Section */}
+        {content.services.length > 0 && (
+          <section className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 text-center">
+              Our {serviceData.name} Services in {cityName}
+            </h2>
             
-            <p className="text-lg">
-              Our team of experienced professionals uses state-of-the-art equipment and eco-friendly 
-              cleaning solutions to ensure your property looks its absolute best. Whether you need 
-              one-time service or regular maintenance, we're committed to exceeding your expectations.
-            </p>
-          </div>
-        </section>
+            <div className="grid md:grid-cols-2 gap-4">
+              {content.services.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 p-4 bg-card border-2 border-border rounded-xl hover:border-accent transition-all"
+                >
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                  <p className="text-foreground font-medium">{item.replace(/\[City\]/g, cityName)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Why Choose Us */}
-        <section className="max-w-4xl mx-auto bg-muted/50 rounded-3xl p-8 md:p-12">
+        <section className="max-w-4xl mx-auto bg-accent/10 rounded-3xl p-8 md:p-12 border-2 border-accent/20">
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 text-center">
-            Why Choose Royalty in {cityName}?
+            Why Choose Royalty Cleaning Services
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              "Licensed & Insured Professionals",
-              "Free, No-Obligation Estimates",
-              "100% Satisfaction Guarantee",
-              "Eco-Friendly Cleaning Solutions",
-              "Residential & Commercial Expertise",
-              "Same-Day Service Available",
-              "Competitive Pricing",
-              "Trusted Throughout Southern California"
-            ].map((benefit, index) => (
+          <div className="space-y-4">
+            {content.whyChoose.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 bg-background rounded-xl"
+                className="flex items-start gap-3 p-4 bg-background rounded-xl border border-border"
               >
-                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
-                <p className="text-foreground font-medium">{benefit}</p>
+                <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <p className="text-foreground font-medium">{item}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Button variant="accent" size="lg" asChild>
+              <a href="tel:+19519994546">
+                <Phone className="mr-2 w-5 h-5" />
+                Call (951) 999-4546 for a Free Estimate
+              </a>
+            </Button>
           </div>
         </section>
 

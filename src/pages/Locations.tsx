@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CountyMap from "@/components/CountyMap";
+import InteractiveMap from "@/components/InteractiveMap";
 import SEOHead from "@/components/SEOHead";
 import { counties, services, slugify } from "@/data/locations";
 import { MapPin } from "lucide-react";
@@ -31,47 +31,64 @@ const Locations = () => {
         {/* Interactive Map */}
         <section>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mb-8 text-center">
-            Southern California Coverage
+            📍 Locations We Serve (Southern California)
           </h2>
-          <p className="text-center text-muted-foreground mb-8">
-            Hover over a county to see all cities we serve
+          <p className="text-center text-muted-foreground mb-8 text-lg">
+            Click on county markers to explore our service areas
           </p>
-          <CountyMap />
+          <InteractiveMap />
         </section>
 
         {/* Cities by County */}
         {Object.entries(counties).map(([countyKey, county]) => (
-          <section key={countyKey}>
+          <section key={countyKey} className="scroll-mt-20">
             <h2
-              className="text-3xl md:text-4xl font-black text-foreground mb-6"
+              className="text-3xl md:text-4xl font-black mb-6 flex items-center"
               style={{ color: county.color }}
             >
-              <MapPin className="inline-block w-8 h-8 mr-2" />
-              {county.name}
+              <MapPin className="w-8 h-8 mr-3" />
+              Royalty Cleaning — {county.name}
             </h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <div
-                  key={service.key}
-                  className="bg-card border-2 border-border rounded-2xl p-6 hover:border-accent transition-all duration-300"
-                >
-                  <h3 className="text-xl font-bold text-foreground mb-4">
-                    {service.name}
-                  </h3>
-                  <div className="space-y-2 max-h-64 overflow-y-auto">
-                    {county.cities.map((city) => (
-                      <Link
-                        key={city}
-                        to={`/${service.key}/${slugify(city)}`}
-                        className="block text-sm text-muted-foreground hover:text-accent transition-colors"
-                      >
-                        {service.name} {city}
-                      </Link>
-                    ))}
+            <p className="text-muted-foreground mb-6">
+              {county.cities.length} cities • All services available
+            </p>
+
+            <div className="bg-card border-2 border-border rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-foreground mb-4">Cities (Service + City):</h3>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {county.cities.map((city) => (
+                  <span key={city} className="text-muted-foreground">
+                    {city}
+                    {county.cities[county.cities.length - 1] !== city && ' •'}
+                  </span>
+                ))}
+              </div>
+
+              <h4 className="text-lg font-bold text-foreground mb-4">Available Services:</h4>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {services.map((service) => (
+                  <div key={service.key} className="space-y-2">
+                    <p className="font-semibold text-sm text-accent">{service.name}</p>
+                    <div className="space-y-1">
+                      {county.cities.slice(0, 3).map((city) => (
+                        <Link
+                          key={`${service.key}-${city}`}
+                          to={`/${service.key}/${slugify(city)}`}
+                          className="block text-xs text-muted-foreground hover:text-accent transition-colors"
+                        >
+                          → {city}
+                        </Link>
+                      ))}
+                      {county.cities.length > 3 && (
+                        <p className="text-xs text-muted-foreground/60">
+                          + {county.cities.length - 3} more cities
+                        </p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
         ))}
