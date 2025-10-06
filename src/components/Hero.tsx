@@ -1,10 +1,8 @@
 import customerImage from "@/assets/hero-customer.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="bg-background py-12 md:py-16">
+  return <section className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Left: Value Motto */}
@@ -15,7 +13,7 @@ const Hero = () => {
               CAN<br />
               <span className="text-gold text-3d">SEE</span>
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-accent">
+            <p className="text-xl md:text-2xl font-bold text-slate-800">
               Satisfaction you can feel.
             </p>
           </div>
@@ -23,11 +21,7 @@ const Hero = () => {
           {/* Middle: Customer Support Image */}
           <div className="flex justify-center">
             <div className="relative w-full max-w-sm">
-              <img 
-                src={customerImage} 
-                alt="Customer support representative ready to help with your cleaning needs" 
-                className="w-full h-auto rounded-2xl shadow-2xl border-4 border-accent"
-              />
+              <img src={customerImage} alt="Customer support representative ready to help with your cleaning needs" className="w-full h-auto rounded-2xl shadow-2xl border-4 border-accent" />
             </div>
           </div>
 
@@ -45,19 +39,13 @@ const Hero = () => {
                 tailored to your needs
               </p>
             </div>
-            <Button 
-              variant="default"
-              size="lg" 
-              className="text-xl py-6 px-10 bg-accent hover:bg-accent/90 text-secondary font-bold group shadow-accent-glow"
-            >
+            <Button variant="default" size="lg" className="text-xl py-6 px-10 bg-accent hover:bg-accent/90 text-secondary font-bold group shadow-accent-glow">
               Get Started
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
