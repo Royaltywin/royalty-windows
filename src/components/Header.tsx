@@ -9,8 +9,9 @@ const Header = () => {
   return <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="w-full px-4 md:px-8 py-1">
         {/* Top Row: Logo + Contact Info */}
-        <div className="flex items-center justify-between mb-1 w-full">
-          <Link to="/">
+        <div className="grid grid-cols-3 items-center mb-1 w-full">
+          <div></div>
+          <Link to="/" className="flex justify-center">
             <Logo />
           </Link>
           
@@ -24,49 +25,49 @@ const Header = () => {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               to="/"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Home
             </Link>
             <Link
               to="/locations"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Locations
             </Link>
             <Link
               to="/window-cleaning"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Window Cleaning
             </Link>
             <Link
               to="/pressure-washing"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Pressure Washing
             </Link>
             <Link
               to="/solar-panel-cleaning"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Solar Panel Cleaning
             </Link>
             <Link
               to="/services"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Other Services
             </Link>
             <Link
               to="/construction-cleanup"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Post Construction
             </Link>
             <Link
               to="/roof-cleaning"
-              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 hover:bg-accent hover:text-accent-foreground transition-all text-sm"
             >
               Roof Cleaning
             </Link>
