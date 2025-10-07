@@ -20,41 +20,56 @@ const Header = () => {
         </div>
 
         {/* Bottom Row: Navigation Menu */}
-        <nav className="bg-gradient-primary rounded-xl p-4 mx-auto max-w-7xl">
+        <nav className="bg-muted rounded-xl p-4 mx-auto max-w-7xl">
           <div className="flex flex-wrap justify-center gap-3">
-            {services.map(service => (
-              <Link
-                key={service.key}
-                to={`/${service.key}`}
-                className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
-              >
-                {service.name}
-              </Link>
-            ))}
             <Link
-              to="/about"
-              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+              to="/"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
             >
-              About Us
+              Home
             </Link>
             <Link
               to="/locations"
-              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
             >
               Locations
             </Link>
             <Link
-              to="/gallery"
-              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+              to="/window-cleaning"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
             >
-              Gallery
+              Window Cleaning
             </Link>
-            <a
-              href="tel:951-999-4546"
-              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+            <Link
+              to="/pressure-washing"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
             >
-              Contact
-            </a>
+              Pressure Washing
+            </Link>
+            <Link
+              to="/solar-panel-cleaning"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+            >
+              Solar Panel Cleaning
+            </Link>
+            <Link
+              to="/services"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+            >
+              Other Services
+            </Link>
+            <Link
+              to="/construction-cleanup"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+            >
+              Post Construction
+            </Link>
+            <Link
+              to="/roof-cleaning"
+              className="px-4 py-2 bg-background/50 backdrop-blur-sm text-foreground rounded-lg font-semibold hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+            >
+              Roof Cleaning
+            </Link>
           </div>
         </nav>
       </div>
