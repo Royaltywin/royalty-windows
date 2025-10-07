@@ -20,62 +20,42 @@ const Header = () => {
         </div>
 
         {/* Bottom Row: Navigation Menu */}
-        <nav className="flex justify-center w-full">
-          <NavigationMenu>
-            <NavigationMenuList className="flex-wrap justify-center">
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-semibold">
-                  Services
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-background">
-                    {services.map(service => <li key={service.key}>
-                        <NavigationMenuLink asChild>
-                          <Link to={`/${service.key}`} className={cn("block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground")}>
-                            <div className="text-sm font-medium">
-                              {service.name}
-                            </div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>)}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/about">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
-                    About Us
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/locations">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
-                    Locations
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/gallery">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
-                    Gallery
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <a href="tel:951-999-4546">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
-                    Contact
-                  </NavigationMenuLink>
-                </a>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+        <nav className="bg-gradient-primary rounded-xl p-4 mx-auto max-w-7xl">
+          <div className="flex flex-wrap justify-center gap-3">
+            {services.map(service => (
+              <Link
+                key={service.key}
+                to={`/${service.key}`}
+                className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+              >
+                {service.name}
+              </Link>
+            ))}
+            <Link
+              to="/about"
+              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+            >
+              About Us
+            </Link>
+            <Link
+              to="/locations"
+              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+            >
+              Locations
+            </Link>
+            <Link
+              to="/gallery"
+              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+            >
+              Gallery
+            </Link>
+            <a
+              href="tel:951-999-4546"
+              className="px-4 py-2 bg-background/20 backdrop-blur-sm text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform text-sm"
+            >
+              Contact
+            </a>
+          </div>
         </nav>
       </div>
     </header>;

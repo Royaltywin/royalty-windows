@@ -8,7 +8,7 @@ const Logo = () => {
         alt="Royalty Cleaning Services Logo" 
         className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
       />
-      <span className="font-logo text-3xl md:text-4xl lg:text-5xl text-outlined tracking-wider font-black whitespace-nowrap">
+      <span className="font-logo text-5xl md:text-7xl text-outlined tracking-wider font-black whitespace-nowrap">
         ROYALTY CLEANING SERVICES
       </span>
     </div>
