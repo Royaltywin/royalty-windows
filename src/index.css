@@ -154,14 +154,28 @@ All colors MUST be HSL.
   
   .text-outlined-thick {
     color: hsl(var(--primary));
-    -webkit-text-stroke: 2px hsl(0 0% 0%);
+    -webkit-text-stroke: 1px hsl(0 0% 0%);
+    paint-order: stroke fill;
     text-shadow: 
-      /* Black outline (inner) */
-      -2px -2px 0 hsl(0 0% 0%),
-      2px -2px 0 hsl(0 0% 0%),
-      -2px 2px 0 hsl(0 0% 0%),
-      2px 2px 0 hsl(0 0% 0%),
-      /* Neon green outline (outer) */
+      /* Layer 1: Thicken letters with magenta */
+      0.5px 0.5px 0 hsl(var(--primary)),
+      -0.5px -0.5px 0 hsl(var(--primary)),
+      0.5px -0.5px 0 hsl(var(--primary)),
+      -0.5px 0.5px 0 hsl(var(--primary)),
+      1px 1px 0 hsl(var(--primary)),
+      -1px -1px 0 hsl(var(--primary)),
+      1px -1px 0 hsl(var(--primary)),
+      -1px 1px 0 hsl(var(--primary)),
+      /* Layer 2: Thin black outline */
+      -1px -1px 0 hsl(0 0% 0%),
+      1px -1px 0 hsl(0 0% 0%),
+      -1px 1px 0 hsl(0 0% 0%),
+      1px 1px 0 hsl(0 0% 0%),
+      /* Layer 3: Neon green outer glow */
+      -2px -2px 0 hsl(var(--accent)),
+      2px -2px 0 hsl(var(--accent)),
+      -2px 2px 0 hsl(var(--accent)),
+      2px 2px 0 hsl(var(--accent)),
       -3px -3px 0 hsl(var(--accent)),
       3px -3px 0 hsl(var(--accent)),
       -3px 3px 0 hsl(var(--accent)),
