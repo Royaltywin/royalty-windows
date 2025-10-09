@@ -87,6 +87,13 @@ const App = () => (
           <Route path="/gutter-cleaning" element={<GutterCleaning />} />
           <Route path="/construction-cleanup" element={<ConstructionCleanup />} />
           
+          {/* Solar Panel Specific Routes */}
+          <Route path="/solar-panel-cleaning" element={<SolarPanelCleaning />} />
+          <Route path="/solar-panel-cleaning/:city" element={<ServiceCity />} />
+          <Route path="/solar-panel-cleaning/:city/commercial" element={<ServiceCity />} />
+          <Route path="/solar-panel-cleaning/:city/residential" element={<ServiceCity />} />
+          <Route path="/solar-panel-cleaning/county/:county" element={<ServiceCity />} />
+          
           {/* Locations Structure */}
           <Route path="/locations" element={<Locations />} />
           

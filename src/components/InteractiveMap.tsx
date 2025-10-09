@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Button } from '@/components/ui/button';
-import { Navigation, MapPin } from 'lucide-react';
+import { Navigation, MapPin, Search } from 'lucide-react';
 import { counties } from '@/data/locations';
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import CountyTileModal from './CountyTileModal';
 
 // Note: For production, add your Mapbox token to Supabase Edge Function Secrets
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'; // Demo token
@@ -15,6 +17,8 @@ const InteractiveMap = () => {
   const map = useRef<mapboxgl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapError, setMapError] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
@@ -63,6 +67,10 @@ const InteractiveMap = () => {
           
           el.addEventListener('mouseleave', () => {
             el.style.transform = 'scale(1)';
+          });
+
+          el.addEventListener('click', () => {
+            setSelectedCounty(county.name);
           });
 
           // Create popup
@@ -133,6 +141,41 @@ const InteractiveMap = () => {
     }
   };
 
+  const handleCountyModalClose = () => {
+    setSelectedCounty(null);
+  };
+
+  const handleBookNow = () => {
+    window.location.href = 'tel:+19519994546';
+  };
+
+  const handleGetQuote = () => {
+    document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' });
+    setSelectedCounty(null);
+  };
+
+  const getServiceHighlight = (countyName: string) => {
+    const highlights: Record<string, string> = {
+      'Orange County': 'The best window cleaning in Orange County',
+      'Riverside County': 'The best pressure washing in Riverside County',
+      'San Bernardino County': 'The best solar panel cleaning in San Bernardino County',
+      'Los Angeles County': 'The best roof cleaning in Los Angeles County',
+      'San Diego County': 'The best gutter cleaning in San Diego County',
+      'Ventura County': 'The best graffiti removal in Ventura County',
+    };
+    return highlights[countyName] || 'Professional cleaning services';
+  };
+
+  const filteredCounties = searchQuery
+    ? Object.values(counties).filter(
+        (county) =>
+          county.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          county.cities.some((city) =>
+            city.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+      )
+    : Object.values(counties);
+
   // Fallback UI when map fails to load
   if (mapError) {
     return (
@@ -176,21 +219,35 @@ const InteractiveMap = () => {
   }
 
   return (
-    <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-border">
-      <div ref={mapContainer} className="absolute inset-0" />
-      
-      {mapLoaded && (
-        <div className="absolute top-4 left-4 z-10">
-          <Button
-            onClick={findMyLocation}
-            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg font-bold"
-            size="lg"
-          >
-            <Navigation className="mr-2 w-5 h-5" />
-            Find Your Local Cleaner
-          </Button>
-        </div>
-      )}
+    <>
+      <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-border">
+        <div ref={mapContainer} className="absolute inset-0" />
+        
+        {mapLoaded && (
+          <>
+            {/* Search Box */}
+            <div className="absolute top-4 left-4 right-4 z-10 flex gap-2">
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search your city or ZIP code..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 bg-background/95 backdrop-blur border-2 border-border shadow-lg"
+                />
+              </div>
+              <Button
+                onClick={findMyLocation}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg font-bold"
+                size="lg"
+              >
+                <Navigation className="mr-2 w-5 h-5" />
+                Find Me
+              </Button>
+            </div>
+          </>
+        )}
 
       <div className="absolute bottom-4 left-4 right-4 z-10">
         <div className="bg-background/95 backdrop-blur rounded-xl p-4 border-2 border-border">
@@ -208,7 +265,20 @@ const InteractiveMap = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+
+      {/* County Tile Modal */}
+      {selectedCounty && (
+        <CountyTileModal
+          isOpen={!!selectedCounty}
+          onClose={handleCountyModalClose}
+          countyName={selectedCounty}
+          serviceHighlight={getServiceHighlight(selectedCounty)}
+          onBookNow={handleBookNow}
+          onGetQuote={handleGetQuote}
+        />
+      )}
+    </>
   );
 };
 
