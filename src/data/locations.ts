@@ -1030,6 +1030,73 @@ export function slugify(text: string): string {
     .trim();
 }
 
+// Solar Panel Cleaning Data
+export interface SolarMaintenancePlan {
+  name: string;
+  frequency: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+}
+
+export const solarMaintenancePlans: SolarMaintenancePlan[] = [
+  {
+    name: "Sunny Start",
+    frequency: "Bi-Annual",
+    description: "Perfect for homeowners in low-dust areas",
+    features: ["2 cleanings per year", "Hard water spot removal", "Panel inspection", "Basic bird proofing inspection"],
+    highlighted: false
+  },
+  {
+    name: "Brighter Boost",
+    frequency: "Tri-Annual",
+    description: "Ideal for coastal or high-pollen regions",
+    features: ["3 cleanings per year", "Priority scheduling", "Advanced bird proofing inspection", "Minor repair coordination"],
+    highlighted: false
+  },
+  {
+    name: "Full Sun Power Shield Plan",
+    frequency: "Quarterly / $25/month",
+    description: "Maximum efficiency with complete protection",
+    features: [
+      "4 cleanings per year",
+      "Full 6-point health check",
+      "Emergency service available",
+      "Bird netting discounted",
+      "$25/month subscription available"
+    ],
+    highlighted: true
+  }
+];
+
+export const commercialHealthCheck = [
+  "Panel efficiency assessment",
+  "Wiring and connection inspection",
+  "Inverter performance check",
+  "Bird nest and debris removal",
+  "Hard water spot analysis",
+  "Shade and obstruction review"
+];
+
+export const residentialBenefits = [
+  {
+    title: "Maximize Efficiency",
+    description: "Dust, pollen, and bird droppings block sunlight and reduce energy output by 20-30%"
+  },
+  {
+    title: "Protect Investment",
+    description: "Regular cleaning extends panel lifespan and maintains warranty coverage"
+  },
+  {
+    title: "Improve Curb Appeal",
+    description: "Clean panels look better and increase home value"
+  },
+  {
+    title: "Bird Proofing",
+    description: "Prevent nesting damage with professional bird netting solutions"
+  }
+];
+
 export function getAllCityServiceCombinations() {
   const combinations: Array<{ service: string; city: string; county: string }> = [];
   

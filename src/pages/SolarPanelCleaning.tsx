@@ -77,28 +77,24 @@ const SolarPanelCleaning = () => {
     {
       name: "Sunny Start",
       frequency: "Bi-Annual",
-      description: "Perfect for homeowners in low-dust areas",
-      features: ["2 cleanings per year", "Hard water spot removal", "Panel inspection"],
+      description: "Perfect for homeowners in low-dust areas or those just starting to see the benefits of regular maintenance.",
+      features: ["2 cleanings per year", "Hard water spot removal", "Panel inspection", "Basic bird proofing inspection"],
+      highlighted: false
     },
     {
       name: "Brighter Boost",
       frequency: "Tri-Annual",
-      description: "Ideal for coastal or high-pollen regions",
-      features: ["3 cleanings per year", "Priority scheduling", "Bird proofing inspection"],
+      description: "Ideal for coastal or high-pollen regions that require a bit more attention to maintain peak efficiency.",
+      features: ["3 cleanings per year", "Priority scheduling", "Advanced bird proofing inspection", "Minor repair coordination"],
+      highlighted: false
     },
     {
-      name: "Full Sun Power",
-      frequency: "Quarterly",
-      description: "Maximum efficiency for commercial arrays",
-      features: ["4 cleanings per year", "Full 6-point health check", "Emergency service"],
-    },
-    {
-      name: "Shield Plan",
-      frequency: "$25/month",
-      description: "Complete protection package",
-      features: ["Monthly monitoring", "Unlimited cleanings", "Bird netting included"],
-      highlighted: true,
-    },
+      name: "Full Sun Power Shield Plan",
+      frequency: "Quarterly / $25/month",
+      description: "Maximum efficiency with complete protection. Get 4 cleanings per year with subscription option.",
+      features: ["4 cleanings per year", "Full 6-point health check", "Emergency service available", "Bird netting discounted", "$25/month subscription available"],
+      highlighted: true
+    }
   ];
 
   return (
@@ -246,7 +242,11 @@ const SolarPanelCleaning = () => {
                 ))}
               </div>
               <div className="mt-8 text-center">
-                <Button size="lg" variant="accent">
+                <Button 
+                  size="lg" 
+                  variant="accent"
+                  onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   Request Commercial Quote
                 </Button>
               </div>
@@ -306,31 +306,33 @@ const SolarPanelCleaning = () => {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               No long contracts • Cancel anytime • Satisfaction guaranteed
             </p>
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {maintenancePlans.map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`p-6 ${plan.highlighted ? 'border-4 border-accent shadow-accent-glow' : ''}`}
+                <Card 
+                  key={index} 
+                  className={`p-6 hover:shadow-lg transition-shadow ${
+                    plan.highlighted ? 'ring-2 ring-primary shadow-xl relative' : ''
+                  }`}
                 >
                   {plan.highlighted && (
-                    <div className="bg-accent text-accent-foreground text-center py-2 px-4 rounded-lg mb-4 font-bold">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold">
                       MOST POPULAR
                     </div>
                   )}
-                  <h3 className="text-2xl font-black mb-2 text-foreground">{plan.name}</h3>
-                  <p className="text-3xl font-bold text-accent mb-2">{plan.frequency}</p>
-                  <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
-                  <ul className="space-y-2 mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <p className="text-lg text-primary font-semibold mb-4">{plan.frequency}</p>
+                  <p className="text-muted-foreground mb-6">{plan.description}</p>
+                  <ul className="space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button
-                    variant={plan.highlighted ? "accent" : "outline"}
-                    className="w-full"
+                    variant={plan.highlighted ? "default" : "outline"}
+                    className="w-full mt-6"
                     onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Enroll Today
