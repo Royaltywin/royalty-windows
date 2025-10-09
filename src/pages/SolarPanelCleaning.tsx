@@ -1,5 +1,12 @@
 import ServicePageTemplate from "@/components/ServicePageTemplate";
-import heroImage from "@/assets/hero-cleaning-team.jpg";
+import heroImage from "@/assets/solar-panels/action-1.jpg";
+import solarAction2 from "@/assets/solar-panels/action-2.jpg";
+import solarAction3 from "@/assets/solar-panels/action-3.jpg";
+import solarBeforeAfter from "@/assets/solar-panels/before-after-1.jpg";
+import solarClean1 from "@/assets/solar-panels/clean-1.jpg";
+import solarClean2 from "@/assets/solar-panels/clean-2.jpg";
+import licensedBadge from "@/assets/badges/licensed-insured-bonded.jpg";
+import satisfactionBadge from "@/assets/badges/satisfaction-guaranteed.jpg";
 
 const SolarPanelCleaning = () => {
   const benefits = [
@@ -26,14 +33,19 @@ const SolarPanelCleaning = () => {
 
   const beforeAfterImages = [
     {
-      before: heroImage,
-      after: heroImage,
+      before: solarBeforeAfter,
+      after: solarClean1,
       title: "Residential Solar Panel Cleaning",
     },
     {
-      before: heroImage,
-      after: heroImage,
+      before: solarAction2,
+      after: solarClean2,
       title: "Commercial Solar Array",
+    },
+    {
+      before: solarAction3,
+      after: solarClean1,
+      title: "Professional Panel Maintenance",
     },
   ];
 
@@ -61,6 +73,20 @@ const SolarPanelCleaning = () => {
           bird droppings, and mineral deposits without damaging your panels. Our bird proofing
           services protect your investment from nesting and debris accumulation.
         </p>
+        
+        {/* Trust Badges */}
+        <div className="flex flex-wrap gap-6 justify-center my-8 not-prose">
+          <img 
+            src={licensedBadge} 
+            alt="Licensed, Insured and Bonded Solar Panel Cleaning Service" 
+            className="h-24 w-auto object-contain"
+          />
+          <img 
+            src={satisfactionBadge} 
+            alt="100% Satisfaction Guaranteed Solar Panel Maintenance" 
+            className="h-24 w-auto object-contain"
+          />
+        </div>
       </section>
     </ServicePageTemplate>
   );
