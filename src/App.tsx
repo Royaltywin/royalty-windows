@@ -69,6 +69,36 @@ import SilveradoWindowCleaning from "./pages/cities/SilveradoWindowCleaning";
 import TalegaWindowCleaning from "./pages/cities/TalegaWindowCleaning";
 import TrabucoCanyonWindowCleaning from "./pages/cities/TrabucoCanyonWindowCleaning";
 
+// Solar Panel Cleaning City Pages
+import IrvineSolarCleaning from "./pages/solar-cities/orange-county/IrvineSolarCleaning";
+import AnaheimSolarCleaning from "./pages/solar-cities/orange-county/AnaheimSolarCleaning";
+import NewportBeachSolarCleaning from "./pages/solar-cities/orange-county/NewportBeachSolarCleaning";
+import HuntingtonBeachSolarCleaning from "./pages/solar-cities/orange-county/HuntingtonBeachSolarCleaning";
+import SantaAnaSolarCleaning from "./pages/solar-cities/orange-county/SantaAnaSolarCleaning";
+import CostaMesaSolarCleaning from "./pages/solar-cities/orange-county/CostaMesaSolarCleaning";
+import FullertonSolarCleaning from "./pages/solar-cities/orange-county/FullertonSolarCleaning";
+import OrangeSolarCleaning from "./pages/solar-cities/orange-county/OrangeSolarCleaning";
+import GardenGroveSolarCleaning from "./pages/solar-cities/orange-county/GardenGroveSolarCleaning";
+import TustinSolarCleaning from "./pages/solar-cities/orange-county/TustinSolarCleaning";
+import LagunaBeachSolarCleaning from "./pages/solar-cities/orange-county/LagunaBeachSolarCleaning";
+import MissionViejoSolarCleaning from "./pages/solar-cities/orange-county/MissionViejoSolarCleaning";
+import LakeForestSolarCleaning from "./pages/solar-cities/orange-county/LakeForestSolarCleaning";
+import LagunaNiguelSolarCleaning from "./pages/solar-cities/orange-county/LagunaNiguelSolarCleaning";
+import SanClementeSolarCleaning from "./pages/solar-cities/orange-county/SanClementeSolarCleaning";
+import YorbaLindaSolarCleaning from "./pages/solar-cities/orange-county/YorbaLindaSolarCleaning";
+import SanJuanCapistranoSolarCleaning from "./pages/solar-cities/orange-county/SanJuanCapistranoSolarCleaning";
+import WestminsterSolarCleaning from "./pages/solar-cities/orange-county/WestminsterSolarCleaning";
+import BuenaParkSolarCleaning from "./pages/solar-cities/orange-county/BuenaParkSolarCleaning";
+import BreaSolarCleaning from "./pages/solar-cities/orange-county/BreaSolarCleaning";
+import AlisoViejoSolarCleaning from "./pages/solar-cities/orange-county/AlisoViejoSolarCleaning";
+import RiversideSolarCleaning from "./pages/solar-cities/riverside-county/RiversideSolarCleaning";
+import CoronaSolarCleaning from "./pages/solar-cities/riverside-county/CoronaSolarCleaning";
+import MurrietaSolarCleaning from "./pages/solar-cities/riverside-county/MurrietaSolarCleaning";
+import TemeculaSolarCleaning from "./pages/solar-cities/riverside-county/TemeculaSolarCleaning";
+import SanBernardinoSolarCleaning from "./pages/solar-cities/san-bernardino-county/SanBernardinoSolarCleaning";
+import SanDiegoSolarCleaning from "./pages/solar-cities/san-diego-county/SanDiegoSolarCleaning";
+import LosAngelesSolarCleaning from "./pages/solar-cities/los-angeles-county/LosAngelesSolarCleaning";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -87,12 +117,37 @@ const App = () => (
           <Route path="/gutter-cleaning" element={<GutterCleaning />} />
           <Route path="/construction-cleanup" element={<ConstructionCleanup />} />
           
-          {/* Solar Panel Specific Routes */}
-          <Route path="/solar-panel-cleaning" element={<SolarPanelCleaning />} />
-          <Route path="/solar-panel-cleaning/:city" element={<ServiceCity />} />
-          <Route path="/solar-panel-cleaning/:city/commercial" element={<ServiceCity />} />
-          <Route path="/solar-panel-cleaning/:city/residential" element={<ServiceCity />} />
-          <Route path="/solar-panel-cleaning/county/:county" element={<ServiceCity />} />
+          {/* Solar Panel City Pages - Orange County */}
+          <Route path="/solar-panel-cleaning/irvine" element={<IrvineSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/anaheim" element={<AnaheimSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/newport-beach" element={<NewportBeachSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/huntington-beach" element={<HuntingtonBeachSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/santa-ana" element={<SantaAnaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/costa-mesa" element={<CostaMesaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/fullerton" element={<FullertonSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/orange" element={<OrangeSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/garden-grove" element={<GardenGroveSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/tustin" element={<TustinSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/laguna-beach" element={<LagunaBeachSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/mission-viejo" element={<MissionViejoSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/lake-forest" element={<LakeForestSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/laguna-niguel" element={<LagunaNiguelSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/san-clemente" element={<SanClementeSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/yorba-linda" element={<YorbaLindaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/san-juan-capistrano" element={<SanJuanCapistranoSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/westminster" element={<WestminsterSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/buena-park" element={<BuenaParkSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/brea" element={<BreaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/aliso-viejo" element={<AlisoViejoSolarCleaning />} />
+          
+          {/* Solar Panel City Pages - Other Counties */}
+          <Route path="/solar-panel-cleaning/riverside" element={<RiversideSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/corona" element={<CoronaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/murrieta" element={<MurrietaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/temecula" element={<TemeculaSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/san-bernardino" element={<SanBernardinoSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/san-diego" element={<SanDiegoSolarCleaning />} />
+          <Route path="/solar-panel-cleaning/los-angeles" element={<LosAngelesSolarCleaning />} />
           
           {/* Locations Structure */}
           <Route path="/locations" element={<Locations />} />
