@@ -103,6 +103,194 @@ export const services = [
   { key: "construction-cleanup", name: "Post-Construction Cleanup" }
 ];
 
+// Pressure Washing Service Interfaces
+export interface PressureWashingService {
+  name: string;
+  slug: string;
+  type: 'commercial' | 'residential';
+  description: string;
+  benefits: string[];
+  icon: string;
+}
+
+// Commercial Pressure Washing Services
+export const commercialPressureWashingServices: PressureWashingService[] = [
+  {
+    name: "Commercial Exterior Cleaning",
+    slug: "commercial-exterior-cleaning",
+    type: "commercial",
+    description: "Full-property exterior steam and pressure cleaning for walls, walkways, entries, and common areas.",
+    benefits: ["Restores professional curb appeal", "Prevents long-term damage", "Improves property value", "Safe for paint and landscaping"],
+    icon: "building"
+  },
+  {
+    name: "Concrete Cleaning",
+    slug: "concrete-cleaning",
+    type: "commercial",
+    description: "Remove oil, gum, tire marks, rust stains, and algae from sidewalks, plazas, and loading zones.",
+    benefits: ["Removes oil and rust stains", "Restores traction & appearance", "OSHA-safe walkways", "Eliminates trip hazards"],
+    icon: "square"
+  },
+  {
+    name: "Exterior Building Wash & Pressure Washing",
+    slug: "exterior-building-wash",
+    type: "commercial",
+    description: "Facades, stucco, EIFS, brick, glass, and metal restored without damage.",
+    benefits: ["Non-abrasive soft-wash", "Removes grime without stripping paint", "Enhances professional image", "Protects exterior surfaces"],
+    icon: "home"
+  },
+  {
+    name: "Graffiti Removal",
+    slug: "graffiti-removal",
+    type: "commercial",
+    description: "Rapid, shadow-free removal using 250°F steam and surface-safe products.",
+    benefits: ["Protects brand image", "Prevents repeat vandalism", "Works on all surfaces", "Fast response available"],
+    icon: "spray-can"
+  },
+  {
+    name: "Trash Enclosure Pressure Washing",
+    slug: "trash-enclosure-cleaning",
+    type: "commercial",
+    description: "Degrease pads, walls, and drains to control odors, pests, and slip hazards.",
+    benefits: ["Pest control", "Odor removal", "Safety compliance", "Reduces liability"],
+    icon: "trash-2"
+  },
+  {
+    name: "Roof Cleaning (TPO, Metal, Tile)",
+    slug: "roof-cleaning",
+    type: "commercial",
+    description: "Algae, dirt, and debris removal to protect membranes and extend roof life.",
+    benefits: ["Extend roof life", "Prevent mold growth", "Insurance maintenance compliant", "Improves energy efficiency"],
+    icon: "home"
+  },
+  {
+    name: "Signage Pressure Washing",
+    slug: "signage-cleaning",
+    type: "commercial",
+    description: "Clean oxidation, grime, and bird droppings to keep branding clear and vibrant.",
+    benefits: ["Brighter visibility", "Brand protection", "Safe for LED and painted surfaces", "Improved customer perception"],
+    icon: "square-activity"
+  },
+  {
+    name: "Parking Garage Cleaning",
+    slug: "parking-garage-cleaning",
+    type: "commercial",
+    description: "Deep clean decks, ramps, and stairwells to remove oil, gum, and buildup safely.",
+    benefits: ["Removes oil & gum", "Reduces slip risks", "Maintains compliance", "Extends surface life"],
+    icon: "car"
+  },
+  {
+    name: "Awning & Canopy Cleaning",
+    slug: "awning-canopy-cleaning",
+    type: "commercial",
+    description: "Fabric, vinyl, and metal awnings cleaned with material-appropriate methods.",
+    benefits: ["Extend material life", "Improve curb appeal", "Prevent mold staining", "Restore original colors"],
+    icon: "umbrella"
+  },
+  {
+    name: "Storm Drain Cleaning",
+    slug: "storm-drain-cleaning",
+    type: "commercial",
+    description: "Clear catch basins and inlets to prevent clogs, flooding, and violations.",
+    benefits: ["Prevent flooding & erosion", "Stay EPA compliant", "Protect infrastructure", "Avoid fines"],
+    icon: "droplet"
+  }
+];
+
+// Residential Pressure Washing Services
+export const residentialPressureWashingServices: PressureWashingService[] = [
+  {
+    name: "Residential Deck & Patio Cleaning",
+    slug: "deck-patio-cleaning",
+    type: "residential",
+    description: "Restore beauty and safety on pavers, stone, concrete, wood, and composite. Remove algae, mildew, food stains, and efflorescence.",
+    benefits: ["Removes mold & slippery buildup", "Extends deck life", "Makes entertaining spaces shine", "Safe surface restoration"],
+    icon: "sun"
+  },
+  {
+    name: "Residential Garage & Driveway Cleaning",
+    slug: "garage-driveway-cleaning",
+    type: "residential",
+    description: "Lift oil, tire marks, rust, and grime from garages and driveways for a cleaner, brighter entrance.",
+    benefits: ["Safer non-slip surface", "Removes tough stains & buildup", "Protects concrete from deterioration", "Boosts home value"],
+    icon: "home"
+  },
+  {
+    name: "Residential Roof & Gutter Cleaning",
+    slug: "roof-gutter-cleaning",
+    type: "residential",
+    description: "Clear organic growth and debris to improve drainage, prevent leaks, and extend roof life.",
+    benefits: ["Prevent leaks & water damage", "Extend roof lifespan", "Improve energy efficiency", "Better drainage"],
+    icon: "droplet"
+  }
+];
+
+// Pressure Washing Testimonials
+export const pressureWashingTestimonials = [
+  {
+    quote: "Our retail center looks brand new. The gum, oil, and graffiti are gone—and tenants noticed the same day.",
+    author: "J. Morales",
+    title: "Property Manager",
+    rating: 5
+  },
+  {
+    quote: "Royalty cleaned our driveway and back patio—night and day difference. Fast, courteous, and careful with our plants.",
+    author: "K. Tran",
+    title: "Homeowner",
+    rating: 5
+  },
+  {
+    quote: "Parking garage cleaning was thorough and on schedule. Great documentation for our risk team.",
+    author: "S. Patel",
+    title: "Facility Director",
+    rating: 5
+  }
+];
+
+// Pressure Washing Process Steps
+export const pressureWashingProcess = [
+  "Surface inspection and material analysis",
+  "Pressure and temperature calibration",
+  "Eco-friendly pre-treatment application",
+  "High-temperature steam pressure wash",
+  "Thorough rinse and drainage check",
+  "Final inspection and photo documentation"
+];
+
+// Pressure Washing Benefits
+export const pressureWashingBenefits = [
+  {
+    title: "Advanced Technology",
+    description: "Up to 4,200 PSI and 250°F steam systems for deep cleaning without damage",
+    icon: "zap"
+  },
+  {
+    title: "EPA Compliant",
+    description: "Eco-friendly detergents and water recovery systems meet all environmental standards",
+    icon: "leaf"
+  },
+  {
+    title: "Licensed & Insured",
+    description: "Full bonding, licensing, and insurance coverage for your peace of mind",
+    icon: "shield-check"
+  },
+  {
+    title: "Photo Documentation",
+    description: "Before and after photos provided with every service for quality assurance",
+    icon: "camera"
+  },
+  {
+    title: "Emergency Service",
+    description: "Fast response for graffiti removal and urgent cleaning needs",
+    icon: "siren"
+  },
+  {
+    title: "Satisfaction Guaranteed",
+    description: "We stand behind our work with a 100% satisfaction guarantee",
+    icon: "badge-check"
+  }
+];
+
 export interface ServiceContent {
   title: string;
   metaDescription: string;

@@ -7,9 +7,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 interface ServiceBookingFormProps {
   serviceName: string;
   showSolarFields?: boolean;
+  showPressureWashingFields?: boolean;
 }
 
-const ServiceBookingForm = ({ serviceName, showSolarFields = false }: ServiceBookingFormProps) => {
+const ServiceBookingForm = ({ serviceName, showSolarFields = false, showPressureWashingFields = false }: ServiceBookingFormProps) => {
   return (
     <div className="bg-accent/10 border-4 border-accent rounded-3xl p-8 shadow-accent-glow" id="quote-form">
       <h3 className="text-3xl md:text-4xl font-black text-foreground mb-6">
@@ -121,6 +122,107 @@ const ServiceBookingForm = ({ serviceName, showSolarFields = false }: ServiceBoo
                   <input type="radio" name="plan" id="shield" className="w-4 h-4" />
                   <Label htmlFor="shield" className="font-normal cursor-pointer">
                     Shield Plan ($25/month)
+                  </Label>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Pressure Washing Specific Fields */}
+        {showPressureWashingFields && (
+          <>
+            <div className="space-y-2">
+              <Label htmlFor="pwServiceType">Service Type *</Label>
+              <Select>
+                <SelectTrigger id="pwServiceType">
+                  <SelectValue placeholder="Select type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="commercial">Commercial</SelectItem>
+                  <SelectItem value="residential">Residential</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-3">
+              <Label>Services Needed</Label>
+              <div className="grid md:grid-cols-2 gap-2">
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="concreteClean" className="w-4 h-4" />
+                  <Label htmlFor="concreteClean" className="font-normal cursor-pointer">
+                    Concrete Cleaning
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="buildingExterior" className="w-4 h-4" />
+                  <Label htmlFor="buildingExterior" className="font-normal cursor-pointer">
+                    Building Exterior Wash
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="roofClean" className="w-4 h-4" />
+                  <Label htmlFor="roofClean" className="font-normal cursor-pointer">
+                    Roof Cleaning
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="deckPatio" className="w-4 h-4" />
+                  <Label htmlFor="deckPatio" className="font-normal cursor-pointer">
+                    Deck/Patio Cleaning
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="driveway" className="w-4 h-4" />
+                  <Label htmlFor="driveway" className="font-normal cursor-pointer">
+                    Driveway/Garage Cleaning
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="graffiti" className="w-4 h-4" />
+                  <Label htmlFor="graffiti" className="font-normal cursor-pointer">
+                    Graffiti Removal
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="parkingLot" className="w-4 h-4" />
+                  <Label htmlFor="parkingLot" className="font-normal cursor-pointer">
+                    Parking Garage/Lot
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" id="awningCanopy" className="w-4 h-4" />
+                  <Label htmlFor="awningCanopy" className="font-normal cursor-pointer">
+                    Awning/Canopy
+                  </Label>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="squareFootage">Approximate Square Footage (optional)</Label>
+              <Input id="squareFootage" type="number" placeholder="e.g., 2000" />
+            </div>
+
+            <div className="space-y-3">
+              <Label>Maintenance Plan Interest</Label>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <input type="radio" name="pwPlan" id="oneTime" className="w-4 h-4" />
+                  <Label htmlFor="oneTime" className="font-normal cursor-pointer">
+                    One-Time Service
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="radio" name="pwPlan" id="monthly" className="w-4 h-4" />
+                  <Label htmlFor="monthly" className="font-normal cursor-pointer">
+                    Monthly Maintenance
+                  </Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input type="radio" name="pwPlan" id="quarterly" className="w-4 h-4" />
+                  <Label htmlFor="quarterly" className="font-normal cursor-pointer">
+                    Quarterly Maintenance
                   </Label>
                 </div>
               </div>
