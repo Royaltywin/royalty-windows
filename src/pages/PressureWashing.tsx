@@ -107,7 +107,7 @@ const PressureWashing = () => {
       <section className="py-20 px-4 md:px-8">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-5xl md:text-6xl font-black text-center mb-6">
-            We're In the People Business<br />(That Happens to Be Cleaning)
+            We're In the People Business<br />That Happens to Be Cleaning
           </h2>
           <p className="text-xl text-muted-foreground text-center mb-12 max-w-4xl mx-auto">
             Royalty Pressure Washing was built on structure, consistency, and care. From storefronts and parking garages to homes and HOAs, we clean with intention—adjusting pressure and temperature to match each surface.
