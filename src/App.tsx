@@ -16,6 +16,32 @@ import Locations from "./pages/Locations";
 import CityHub from "./pages/CityHub";
 import ServiceCity from "./pages/ServiceCity";
 
+// Pressure Washing Service Pages
+import CommercialExteriorCleaning from "./pages/pressure-washing/commercial/CommercialExteriorCleaning";
+import ConcreteCleaning from "./pages/pressure-washing/commercial/ConcreteCleaning";
+import ExteriorBuildingWash from "./pages/pressure-washing/commercial/ExteriorBuildingWash";
+import GraffitiRemovalPW from "./pages/pressure-washing/commercial/GraffitiRemoval";
+import TrashEnclosureCleaning from "./pages/pressure-washing/commercial/TrashEnclosureCleaning";
+import RoofCleaningPW from "./pages/pressure-washing/commercial/RoofCleaning";
+import SignageCleaning from "./pages/pressure-washing/commercial/SignageCleaning";
+import ParkingGarageCleaning from "./pages/pressure-washing/commercial/ParkingGarageCleaning";
+import AwningCanopyCleaning from "./pages/pressure-washing/commercial/AwningCanopyCleaning";
+import StormDrainCleaning from "./pages/pressure-washing/commercial/StormDrainCleaning";
+import DeckPatioCleaning from "./pages/pressure-washing/residential/DeckPatioCleaning";
+import GarageDrivewayClean from "./pages/pressure-washing/residential/GarageDrivewayClean";
+import RoofGutterCleaning from "./pages/pressure-washing/residential/RoofGutterCleaning";
+
+// Pressure Washing City Pages - Sample Cities
+import IrvinePressureWashing from "./pages/pressure-washing-cities/orange-county/IrvinePressureWashing";
+import AnaheimPressureWashing from "./pages/pressure-washing-cities/orange-county/AnaheimPressureWashing";
+import NewportBeachPressureWashing from "./pages/pressure-washing-cities/orange-county/NewportBeachPressureWashing";
+import RiversidePressureWashing from "./pages/pressure-washing-cities/riverside-county/RiversidePressureWashing";
+import CoronaPressureWashing from "./pages/pressure-washing-cities/riverside-county/CoronaPressureWashing";
+import SanBernardinoPressureWashing from "./pages/pressure-washing-cities/san-bernardino-county/SanBernardinoPressureWashing";
+import SanDiegoPressureWashing from "./pages/pressure-washing-cities/san-diego-county/SanDiegoPressureWashing";
+import LosAngelesPressureWashing from "./pages/pressure-washing-cities/los-angeles-county/LosAngelesPressureWashing";
+import OxnardPressureWashing from "./pages/pressure-washing-cities/ventura-county/OxnardPressureWashing";
+
 // County Hub Pages
 import OrangeCounty from "./pages/counties/OrangeCounty";
 import RiversideCounty from "./pages/counties/RiversideCounty";
@@ -532,6 +558,32 @@ const App = () => (
           
           {/* City Hubs - Dynamic Route */}
           <Route path="/locations/:county/:city" element={<CityHub />} />
+          
+          {/* Pressure Washing Service Routes */}
+          <Route path="/pressure-washing/commercial-exterior-cleaning" element={<CommercialExteriorCleaning />} />
+          <Route path="/pressure-washing/concrete-cleaning" element={<ConcreteCleaning />} />
+          <Route path="/pressure-washing/exterior-building-wash" element={<ExteriorBuildingWash />} />
+          <Route path="/pressure-washing/graffiti-removal" element={<GraffitiRemovalPW />} />
+          <Route path="/pressure-washing/trash-enclosure-cleaning" element={<TrashEnclosureCleaning />} />
+          <Route path="/pressure-washing/roof-cleaning" element={<RoofCleaningPW />} />
+          <Route path="/pressure-washing/signage-cleaning" element={<SignageCleaning />} />
+          <Route path="/pressure-washing/parking-garage-cleaning" element={<ParkingGarageCleaning />} />
+          <Route path="/pressure-washing/awning-canopy-cleaning" element={<AwningCanopyCleaning />} />
+          <Route path="/pressure-washing/storm-drain-cleaning" element={<StormDrainCleaning />} />
+          <Route path="/pressure-washing/deck-patio-cleaning" element={<DeckPatioCleaning />} />
+          <Route path="/pressure-washing/garage-driveway-cleaning" element={<GarageDrivewayClean />} />
+          <Route path="/pressure-washing/roof-gutter-cleaning" element={<RoofGutterCleaning />} />
+
+          {/* Pressure Washing City Routes - Sample Cities */}
+          <Route path="/pressure-washing/irvine" element={<IrvinePressureWashing />} />
+          <Route path="/pressure-washing/anaheim" element={<AnaheimPressureWashing />} />
+          <Route path="/pressure-washing/newport-beach" element={<NewportBeachPressureWashing />} />
+          <Route path="/pressure-washing/riverside" element={<RiversidePressureWashing />} />
+          <Route path="/pressure-washing/corona" element={<CoronaPressureWashing />} />
+          <Route path="/pressure-washing/san-bernardino" element={<SanBernardinoPressureWashing />} />
+          <Route path="/pressure-washing/san-diego" element={<SanDiegoPressureWashing />} />
+          <Route path="/pressure-washing/los-angeles" element={<LosAngelesPressureWashing />} />
+          <Route path="/pressure-washing/oxnard" element={<OxnardPressureWashing />} />
           
           {/* Existing Orange County Window Cleaning Pages (for SEO) */}
           <Route path="/window-cleaning/aliso-viejo" element={<AlisoViejoWindowCleaning />} />

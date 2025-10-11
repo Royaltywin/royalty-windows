@@ -6,8 +6,11 @@ const Footer = () => {
   const services = [
     { name: "Window Cleaning", path: "/window-cleaning" },
     { name: "Pressure Washing", path: "/pressure-washing" },
-    { name: "Solar Panel Cleaning", path: "/solar-panel-cleaning" },
+    { name: "Commercial Pressure Washing", path: "/pressure-washing#commercial" },
+    { name: "Residential Pressure Washing", path: "/pressure-washing#residential" },
+    { name: "Concrete Cleaning", path: "/pressure-washing/concrete-cleaning" },
     { name: "Roof Cleaning", path: "/roof-cleaning" },
+    { name: "Solar Panel Cleaning", path: "/solar-panel-cleaning" },
     { name: "Gutter Cleaning", path: "/gutter-cleaning" },
     { name: "Graffiti Removal", path: "/graffiti-removal" },
     { name: "Post-Construction Cleanup", path: "/construction-cleanup" },

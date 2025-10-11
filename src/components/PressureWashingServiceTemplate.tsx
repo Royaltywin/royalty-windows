@@ -22,7 +22,7 @@ interface PressureWashingServiceTemplateProps {
   beforeAfterImages?: { before: string; after: string; title: string }[];
   metaTitle: string;
   metaDescription: string;
-  keywords: string;
+  keywords?: string;
   children?: ReactNode;
 }
 
