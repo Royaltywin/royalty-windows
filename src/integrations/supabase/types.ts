@@ -14,7 +14,222 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      quote_requests: {
+        Row: {
+          addon_services: string[] | null
+          blind_types: string[] | null
+          blinds_over_6ft: number | null
+          blinds_quantity: number | null
+          created_at: string | null
+          email: string
+          first_name: string
+          form_data: Json | null
+          has_gutter_guards: boolean | null
+          has_hard_water_spots: boolean | null
+          has_sunroom: boolean | null
+          home_sqft: number | null
+          id: string
+          is_current_customer: boolean | null
+          last_cleaning: string | null
+          last_name: string
+          patio_cover_type: string | null
+          phone: string
+          photo_urls: string[] | null
+          pressure_structures: string[] | null
+          pressure_surfaces: string[] | null
+          primary_services: string[]
+          property_address: string
+          property_city: string | null
+          property_lat: number | null
+          property_lng: number | null
+          property_notes: string | null
+          property_state: string | null
+          property_zip: string | null
+          quote_number: string
+          referral_name: string | null
+          referral_source: string | null
+          roof_stories: string | null
+          roof_type: string | null
+          sms_consent: boolean | null
+          solar_panels_first_story: number | null
+          solar_panels_ground: number | null
+          solar_panels_second_story: number | null
+          solar_stories: string | null
+          status: string | null
+          updated_at: string | null
+          window_count: number | null
+          window_sliding_doors: number | null
+          window_stories: string | null
+          window_types: string[] | null
+          year_built: number | null
+        }
+        Insert: {
+          addon_services?: string[] | null
+          blind_types?: string[] | null
+          blinds_over_6ft?: number | null
+          blinds_quantity?: number | null
+          created_at?: string | null
+          email: string
+          first_name: string
+          form_data?: Json | null
+          has_gutter_guards?: boolean | null
+          has_hard_water_spots?: boolean | null
+          has_sunroom?: boolean | null
+          home_sqft?: number | null
+          id?: string
+          is_current_customer?: boolean | null
+          last_cleaning?: string | null
+          last_name: string
+          patio_cover_type?: string | null
+          phone: string
+          photo_urls?: string[] | null
+          pressure_structures?: string[] | null
+          pressure_surfaces?: string[] | null
+          primary_services: string[]
+          property_address: string
+          property_city?: string | null
+          property_lat?: number | null
+          property_lng?: number | null
+          property_notes?: string | null
+          property_state?: string | null
+          property_zip?: string | null
+          quote_number: string
+          referral_name?: string | null
+          referral_source?: string | null
+          roof_stories?: string | null
+          roof_type?: string | null
+          sms_consent?: boolean | null
+          solar_panels_first_story?: number | null
+          solar_panels_ground?: number | null
+          solar_panels_second_story?: number | null
+          solar_stories?: string | null
+          status?: string | null
+          updated_at?: string | null
+          window_count?: number | null
+          window_sliding_doors?: number | null
+          window_stories?: string | null
+          window_types?: string[] | null
+          year_built?: number | null
+        }
+        Update: {
+          addon_services?: string[] | null
+          blind_types?: string[] | null
+          blinds_over_6ft?: number | null
+          blinds_quantity?: number | null
+          created_at?: string | null
+          email?: string
+          first_name?: string
+          form_data?: Json | null
+          has_gutter_guards?: boolean | null
+          has_hard_water_spots?: boolean | null
+          has_sunroom?: boolean | null
+          home_sqft?: number | null
+          id?: string
+          is_current_customer?: boolean | null
+          last_cleaning?: string | null
+          last_name?: string
+          patio_cover_type?: string | null
+          phone?: string
+          photo_urls?: string[] | null
+          pressure_structures?: string[] | null
+          pressure_surfaces?: string[] | null
+          primary_services?: string[]
+          property_address?: string
+          property_city?: string | null
+          property_lat?: number | null
+          property_lng?: number | null
+          property_notes?: string | null
+          property_state?: string | null
+          property_zip?: string | null
+          quote_number?: string
+          referral_name?: string | null
+          referral_source?: string | null
+          roof_stories?: string | null
+          roof_type?: string | null
+          sms_consent?: boolean | null
+          solar_panels_first_story?: number | null
+          solar_panels_ground?: number | null
+          solar_panels_second_story?: number | null
+          solar_stories?: string | null
+          status?: string | null
+          updated_at?: string | null
+          window_count?: number | null
+          window_sliding_doors?: number | null
+          window_stories?: string | null
+          window_types?: string[] | null
+          year_built?: number | null
+        }
+        Relationships: []
+      }
+      service_waivers: {
+        Row: {
+          after_photo_urls: string[] | null
+          before_photo_urls: string[] | null
+          created_at: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          customer_signature_date: string
+          customer_signature_url: string
+          id: string
+          pdf_url: string | null
+          property_address: string
+          service_date: string
+          services_performed: string[]
+          technician_name: string | null
+          technician_signature_date: string | null
+          technician_signature_url: string | null
+          updated_at: string | null
+          waiver_number: string
+          waiver_text: string
+          waiver_type: string
+        }
+        Insert: {
+          after_photo_urls?: string[] | null
+          before_photo_urls?: string[] | null
+          created_at?: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          customer_signature_date: string
+          customer_signature_url: string
+          id?: string
+          pdf_url?: string | null
+          property_address: string
+          service_date: string
+          services_performed: string[]
+          technician_name?: string | null
+          technician_signature_date?: string | null
+          technician_signature_url?: string | null
+          updated_at?: string | null
+          waiver_number: string
+          waiver_text: string
+          waiver_type: string
+        }
+        Update: {
+          after_photo_urls?: string[] | null
+          before_photo_urls?: string[] | null
+          created_at?: string | null
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          customer_signature_date?: string
+          customer_signature_url?: string
+          id?: string
+          pdf_url?: string | null
+          property_address?: string
+          service_date?: string
+          services_performed?: string[]
+          technician_name?: string | null
+          technician_signature_date?: string | null
+          technician_signature_url?: string | null
+          updated_at?: string | null
+          waiver_number?: string
+          waiver_text?: string
+          waiver_type?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
