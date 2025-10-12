@@ -22,6 +22,8 @@ const Footer = () => {
     { name: "Service Areas", path: "/locations" },
     { name: "Book Now", path: "/#quote" },
     { name: "Contact Us", path: "/#contact" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms of Service", path: "/terms-of-service" },
   ];
 
   const counties = [

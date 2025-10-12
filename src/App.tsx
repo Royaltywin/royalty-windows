@@ -15,6 +15,8 @@ import GutterCleaning from "./pages/GutterCleaning";
 import Locations from "./pages/Locations";
 import CityHub from "./pages/CityHub";
 import ServiceCity from "./pages/ServiceCity";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 // Pressure Washing Service Pages
 import CommercialExteriorCleaning from "./pages/pressure-washing/commercial/CommercialExteriorCleaning";
@@ -1211,6 +1213,10 @@ const App = () => (
           <Route path="/window-cleaning/silverado" element={<SilveradoWindowCleaning />} />
           <Route path="/window-cleaning/talega" element={<TalegaWindowCleaning />} />
           <Route path="/window-cleaning/trabuco-canyon" element={<TrabucoCanyonWindowCleaning />} />
+          
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           
           {/* Service-City Pages - Dynamic Route for all services x all cities */}
           <Route path="/:service/:city" element={<ServiceCity />} />
