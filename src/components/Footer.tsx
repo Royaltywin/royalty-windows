@@ -22,8 +22,14 @@ const Footer = () => {
     { name: "Service Areas", path: "/locations" },
     { name: "Book Now", path: "/#quote" },
     { name: "Contact Us", path: "/#contact" },
+    { name: "About Us", path: "/about" },
+  ];
+
+  const legalLinks = [
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms of Service", path: "/terms-of-service" },
+    { name: "Accessibility", path: "/accessibility" },
+    { name: "Customer Pledge", path: "/customer-pledge" },
   ];
 
   const counties = [
@@ -36,7 +42,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground py-12 px-4 md:px-8">
+    <footer 
+      className="bg-secondary text-secondary-foreground py-12 px-4 md:px-8"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -167,15 +177,79 @@ const Footer = () => {
           <SocialMediaLinks iconSize={22} />
         </div>
 
-        {/* Bottom Bar */}
-        <div className="text-center space-y-2">
-          <p className="text-sm text-secondary-foreground/60">
-            &copy; 2025 Royalty Cleaning Services. All rights reserved.
-          </p>
-          <p className="text-sm font-semibold text-accent">
-            Licensed, Insured & Bonded
-          </p>
+        {/* Legal Links Bar */}
+        <div className="border-t border-secondary-foreground/20 pt-6 pb-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2 sm:gap-4 mb-4">
+            {legalLinks.map((link, index) => (
+              <div key={link.path} className="flex items-center justify-center">
+                <Link
+                  to={link.path}
+                  className="text-sm text-secondary-foreground/70 hover:text-accent transition-colors text-center py-2 sm:py-0"
+                >
+                  {link.name}
+                </Link>
+                {index < legalLinks.length - 1 && (
+                  <span className="hidden sm:inline text-secondary-foreground/40 mx-4">|</span>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* Copyright and Licensing */}
+          <div className="text-center space-y-2">
+            <p className="text-sm text-secondary-foreground/60">
+              &copy; 2025 Royalty Cleaning Services. All rights reserved.
+            </p>
+            <p className="text-sm font-semibold text-accent">
+              Licensed, Insured & Bonded
+            </p>
+          </div>
         </div>
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Royalty Cleaning Services",
+            "alternateName": ["Royalty Window Cleaning", "Temecula Window Cleaning", "Murrieta Window Cleaning"],
+            "description": "Professional window cleaning, pressure washing, solar panel cleaning, and property maintenance services across Southern California. Family-owned, faith-based, and fully insured.",
+            "url": "https://getroyaltyservices.com",
+            "telephone": "(951) 999-4546",
+            "email": "info@getroyaltyservices.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Southern California",
+              "addressRegion": "CA",
+              "addressCountry": "US"
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Yorba Linda" },
+              { "@type": "City", "name": "Temecula" },
+              { "@type": "City", "name": "Murrieta" }
+            ],
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 08:00-18:00",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "100"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Cleaning Services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Cleaning" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pressure Washing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solar Panel Cleaning" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutter Cleaning" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Cleaning" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Graffiti Removal" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Post-Construction Cleanup" } }
+              ]
+            }
+          })}
+        </script>
       </div>
     </footer>
   );

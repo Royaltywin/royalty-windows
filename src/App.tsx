@@ -17,6 +17,9 @@ import CityHub from "./pages/CityHub";
 import ServiceCity from "./pages/ServiceCity";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import AccessibilityStatement from "./pages/AccessibilityStatement";
+import CustomerPledge from "./pages/CustomerPledge";
+import AboutUs from "./pages/AboutUs";
 
 // Pressure Washing Service Pages
 import CommercialExteriorCleaning from "./pages/pressure-washing/commercial/CommercialExteriorCleaning";
@@ -1217,6 +1220,9 @@ const App = () => (
           {/* Legal Pages */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/accessibility" element={<AccessibilityStatement />} />
+          <Route path="/customer-pledge" element={<CustomerPledge />} />
+          <Route path="/about" element={<AboutUs />} />
           
           {/* Service-City Pages - Dynamic Route for all services x all cities */}
           <Route path="/:service/:city" element={<ServiceCity />} />
