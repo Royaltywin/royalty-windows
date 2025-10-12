@@ -10,11 +10,17 @@ const RiversideCounty = () => {
       intro="Riverside County spans diverse landscapes from desert communities to valley cities. Whether you're in Temecula wine country, the Coachella Valley, or urban centers like Riverside and Corona, Royalty Cleaning Services delivers professional window cleaning, pressure washing, solar panel cleaning, roof cleaning, gutter cleaning, post-construction cleanup, and graffiti removal tailored to your climate and property needs."
       popularServices={[
         { name: "Window Cleaning", slug: "window-cleaning", city: "Temecula", citySlug: "temecula" },
-        { name: "Pressure Washing", slug: "pressure-washing", city: "Murrieta", citySlug: "murrieta" },
+        { name: "Pressure Washing Temecula", slug: "pressure-washing", city: "Temecula", citySlug: "temecula" },
+        { name: "Pressure Washing Murrieta", slug: "pressure-washing", city: "Murrieta", citySlug: "murrieta" },
+        { name: "Pressure Washing Riverside", slug: "pressure-washing", city: "Riverside", citySlug: "riverside" },
+        { name: "Pressure Washing Corona", slug: "pressure-washing", city: "Corona", citySlug: "corona" },
+        { name: "Pressure Washing Palm Desert", slug: "pressure-washing", city: "Palm Desert", citySlug: "palm-desert" },
+        { name: "Pressure Washing Moreno Valley", slug: "pressure-washing", city: "Moreno Valley", citySlug: "moreno-valley" },
+        { name: "Pressure Washing Palm Springs", slug: "pressure-washing", city: "Palm Springs", citySlug: "palm-springs" },
+        { name: "Pressure Washing Menifee", slug: "pressure-washing", city: "Menifee", citySlug: "menifee" },
+        { name: "Pressure Washing Indio", slug: "pressure-washing", city: "Indio", citySlug: "indio" },
         { name: "Solar Panel Cleaning", slug: "solar-panel-cleaning", city: "Palm Desert", citySlug: "palm-desert" },
         { name: "Roof Cleaning", slug: "roof-cleaning", city: "Riverside", citySlug: "riverside" },
-        { name: "Gutter Cleaning", slug: "gutter-cleaning", city: "Corona", citySlug: "corona" },
-        { name: "Post-Construction Cleanup", slug: "construction-cleanup", city: "Menifee", citySlug: "menifee" },
       ]}
       faqs={[
         {

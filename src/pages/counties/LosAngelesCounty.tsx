@@ -10,11 +10,29 @@ const LosAngelesCounty = () => {
       intro="Los Angeles County is the most populous county in the nation, featuring everything from beachfront communities to downtown high-rises, historic neighborhoods to modern suburbs. Royalty Cleaning Services provides comprehensive window cleaning, pressure washing, solar panel cleaning, roof cleaning, gutter cleaning, post-construction cleanup, and graffiti removal across all LA County communities, from Malibu to Pasadena, Long Beach to Santa Clarita."
       popularServices={[
         { name: "Window Cleaning", slug: "window-cleaning", city: "Los Angeles", citySlug: "los-angeles" },
-        { name: "Pressure Washing", slug: "pressure-washing", city: "Long Beach", citySlug: "long-beach" },
+        { name: "Pressure Washing Los Angeles", slug: "pressure-washing", city: "Los Angeles", citySlug: "los-angeles" },
+        { name: "Pressure Washing Long Beach", slug: "pressure-washing", city: "Long Beach", citySlug: "long-beach" },
+        { name: "Pressure Washing Pasadena", slug: "pressure-washing", city: "Pasadena", citySlug: "pasadena" },
+        { name: "Pressure Washing Santa Monica", slug: "pressure-washing", city: "Santa Monica", citySlug: "santa-monica" },
+        { name: "Pressure Washing Glendale", slug: "pressure-washing", city: "Glendale", citySlug: "glendale" },
+        { name: "Pressure Washing Burbank", slug: "pressure-washing", city: "Burbank", citySlug: "burbank" },
+        { name: "Pressure Washing Torrance", slug: "pressure-washing", city: "Torrance", citySlug: "torrance" },
+        { name: "Pressure Washing Pomona", slug: "pressure-washing", city: "Pomona", citySlug: "pomona" },
+        { name: "Pressure Washing Santa Clarita", slug: "pressure-washing", city: "Santa Clarita", citySlug: "santa-clarita" },
+        { name: "Pressure Washing Downey", slug: "pressure-washing", city: "Downey", citySlug: "downey" },
+        { name: "Pressure Washing Inglewood", slug: "pressure-washing", city: "Inglewood", citySlug: "inglewood" },
+        { name: "Pressure Washing Carson", slug: "pressure-washing", city: "Carson", citySlug: "carson" },
+        { name: "Pressure Washing El Monte", slug: "pressure-washing", city: "El Monte", citySlug: "el-monte" },
+        { name: "Pressure Washing Norwalk", slug: "pressure-washing", city: "Norwalk", citySlug: "norwalk" },
+        { name: "Pressure Washing West Covina", slug: "pressure-washing", city: "West Covina", citySlug: "west-covina" },
+        { name: "Pressure Washing Whittier", slug: "pressure-washing", city: "Whittier", citySlug: "whittier" },
+        { name: "Pressure Washing Alhambra", slug: "pressure-washing", city: "Alhambra", citySlug: "alhambra" },
+        { name: "Pressure Washing Beverly Hills", slug: "pressure-washing", city: "Beverly Hills", citySlug: "beverly-hills" },
+        { name: "Pressure Washing Redondo Beach", slug: "pressure-washing", city: "Redondo Beach", citySlug: "redondo-beach" },
+        { name: "Pressure Washing Malibu", slug: "pressure-washing", city: "Malibu", citySlug: "malibu" },
         { name: "Solar Panel Cleaning", slug: "solar-panel-cleaning", city: "Pasadena", citySlug: "pasadena" },
         { name: "Graffiti Removal", slug: "graffiti-removal", city: "Santa Monica", citySlug: "santa-monica" },
         { name: "Roof Cleaning", slug: "roof-cleaning", city: "Burbank", citySlug: "burbank" },
-        { name: "Post-Construction Cleanup", slug: "construction-cleanup", city: "Glendale", citySlug: "glendale" },
       ]}
       faqs={[
         {

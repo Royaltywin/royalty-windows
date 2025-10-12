@@ -10,11 +10,17 @@ const SanBernardinoCounty = () => {
       intro="San Bernardino County is California's largest county by area, encompassing mountain communities, desert regions, and growing urban centers. From Big Bear Lake to Ontario, Victorville to Redlands, Royalty Cleaning Services delivers expert window cleaning, pressure washing, solar panel cleaning, roof cleaning, gutter cleaning, post-construction cleanup, and graffiti removal suited to your elevation and climate."
       popularServices={[
         { name: "Window Cleaning", slug: "window-cleaning", city: "Rancho Cucamonga", citySlug: "rancho-cucamonga" },
-        { name: "Pressure Washing", slug: "pressure-washing", city: "Ontario", citySlug: "ontario" },
+        { name: "Pressure Washing Rancho Cucamonga", slug: "pressure-washing", city: "Rancho Cucamonga", citySlug: "rancho-cucamonga" },
+        { name: "Pressure Washing Ontario", slug: "pressure-washing", city: "Ontario", citySlug: "ontario" },
+        { name: "Pressure Washing Fontana", slug: "pressure-washing", city: "Fontana", citySlug: "fontana" },
+        { name: "Pressure Washing Victorville", slug: "pressure-washing", city: "Victorville", citySlug: "victorville" },
+        { name: "Pressure Washing Chino", slug: "pressure-washing", city: "Chino", citySlug: "chino" },
+        { name: "Pressure Washing Chino Hills", slug: "pressure-washing", city: "Chino Hills", citySlug: "chino-hills" },
+        { name: "Pressure Washing Redlands", slug: "pressure-washing", city: "Redlands", citySlug: "redlands" },
+        { name: "Pressure Washing Hesperia", slug: "pressure-washing", city: "Hesperia", citySlug: "hesperia" },
+        { name: "Pressure Washing Upland", slug: "pressure-washing", city: "Upland", citySlug: "upland" },
         { name: "Solar Panel Cleaning", slug: "solar-panel-cleaning", city: "Victorville", citySlug: "victorville" },
         { name: "Roof Cleaning", slug: "roof-cleaning", city: "Redlands", citySlug: "redlands" },
-        { name: "Gutter Cleaning", slug: "gutter-cleaning", city: "Chino Hills", citySlug: "chino-hills" },
-        { name: "Post-Construction Cleanup", slug: "construction-cleanup", city: "Fontana", citySlug: "fontana" },
       ]}
       faqs={[
         {

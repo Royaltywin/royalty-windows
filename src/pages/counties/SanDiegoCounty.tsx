@@ -10,11 +10,17 @@ const SanDiegoCounty = () => {
       intro="San Diego County combines coastal beauty with inland communities, from La Jolla's oceanfront estates to Escondido's suburban neighborhoods. Royalty Cleaning Services provides professional window cleaning, pressure washing, solar panel cleaning, roof cleaning, gutter cleaning, post-construction cleanup, and graffiti removal throughout America's Finest City and surrounding areas."
       popularServices={[
         { name: "Window Cleaning", slug: "window-cleaning", city: "San Diego", citySlug: "san-diego" },
-        { name: "Pressure Washing", slug: "pressure-washing", city: "Carlsbad", citySlug: "carlsbad" },
+        { name: "Pressure Washing San Diego", slug: "pressure-washing", city: "San Diego", citySlug: "san-diego" },
+        { name: "Pressure Washing Carlsbad", slug: "pressure-washing", city: "Carlsbad", citySlug: "carlsbad" },
+        { name: "Pressure Washing Oceanside", slug: "pressure-washing", city: "Oceanside", citySlug: "oceanside" },
+        { name: "Pressure Washing Chula Vista", slug: "pressure-washing", city: "Chula Vista", citySlug: "chula-vista" },
+        { name: "Pressure Washing Escondido", slug: "pressure-washing", city: "Escondido", citySlug: "escondido" },
+        { name: "Pressure Washing Encinitas", slug: "pressure-washing", city: "Encinitas", citySlug: "encinitas" },
+        { name: "Pressure Washing El Cajon", slug: "pressure-washing", city: "El Cajon", citySlug: "el-cajon" },
+        { name: "Pressure Washing La Mesa", slug: "pressure-washing", city: "La Mesa", citySlug: "la-mesa" },
+        { name: "Pressure Washing Vista", slug: "pressure-washing", city: "Vista", citySlug: "vista" },
         { name: "Solar Panel Cleaning", slug: "solar-panel-cleaning", city: "Encinitas", citySlug: "encinitas" },
         { name: "Roof Cleaning", slug: "roof-cleaning", city: "Oceanside", citySlug: "oceanside" },
-        { name: "Gutter Cleaning", slug: "gutter-cleaning", city: "Chula Vista", citySlug: "chula-vista" },
-        { name: "Post-Construction Cleanup", slug: "construction-cleanup", city: "Escondido", citySlug: "escondido" },
       ]}
       faqs={[
         {
