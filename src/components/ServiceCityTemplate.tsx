@@ -27,6 +27,21 @@ interface ServiceCityTemplateProps {
     name: string;
     slug: string;
   }>;
+  isRoofCleaning?: boolean;
+  expertiseHighlight?: string;
+  residentialSection?: {
+    title: string;
+    subtitle: string;
+    content: string;
+    features: string[];
+  };
+  commercialSection?: {
+    title: string;
+    subtitle: string;
+    content: string;
+    features: string[];
+  };
+  valueProposition?: string;
 }
 
 const ServiceCityTemplate = ({
@@ -45,6 +60,11 @@ const ServiceCityTemplate = ({
   neighborhoods,
   faqs,
   otherServices,
+  isRoofCleaning,
+  expertiseHighlight,
+  residentialSection,
+  commercialSection,
+  valueProposition,
 }: ServiceCityTemplateProps) => {
   return (
     <div className="min-h-screen bg-background">
@@ -77,6 +97,47 @@ const ServiceCityTemplate = ({
           </p>
         </section>
 
+        {/* Roof Cleaning: Expertise Highlight */}
+        {isRoofCleaning && expertiseHighlight && (
+          <section className="bg-gradient-primary text-primary-foreground rounded-2xl p-8 text-center">
+            <p className="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+              {expertiseHighlight}
+            </p>
+          </section>
+        )}
+
+        {/* Roof Cleaning: Value Proposition */}
+        {isRoofCleaning && valueProposition && (
+          <section className="max-w-4xl mx-auto">
+            <div className="bg-card rounded-2xl p-8 border-2 border-accent/30">
+              <h2 className="text-2xl md:text-3xl font-black text-foreground mb-6 text-center">
+                Squeegee Pro Roof & Tile Cleaning
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {valueProposition}
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mt-8">
+                <div className="flex items-center gap-3 p-4 bg-background rounded-xl">
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                  <span className="font-semibold text-foreground">Experienced and Trained Roof Technicians</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-background rounded-xl">
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                  <span className="font-semibold text-foreground">Soft Wash Systems Safe for All Roof Types</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-background rounded-xl">
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                  <span className="font-semibold text-foreground">Biodegradable Cleaning Solutions</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-background rounded-xl">
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                  <span className="font-semibold text-foreground">Gutter & Drain Protection During Service</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Why Choose Us */}
         <section className="bg-card rounded-2xl p-8 border-2 border-accent/30">
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 text-center">
@@ -94,6 +155,53 @@ const ServiceCityTemplate = ({
             ))}
           </div>
         </section>
+
+        {/* Roof Cleaning: Residential & Commercial Split */}
+        {isRoofCleaning && residentialSection && commercialSection && (
+          <section className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Residential Section */}
+            <div className="bg-card rounded-2xl p-8 border-2 border-accent/30">
+              <h2 className="text-2xl md:text-3xl font-black text-foreground mb-3">
+                {residentialSection.title}
+              </h2>
+              <h3 className="text-lg font-semibold text-accent mb-4">
+                {residentialSection.subtitle}
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {residentialSection.content}
+              </p>
+              <div className="space-y-3">
+                {residentialSection.features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Commercial Section */}
+            <div className="bg-card rounded-2xl p-8 border-2 border-accent/30">
+              <h2 className="text-2xl md:text-3xl font-black text-foreground mb-3">
+                {commercialSection.title}
+              </h2>
+              <h3 className="text-lg font-semibold text-accent mb-4">
+                {commercialSection.subtitle}
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {commercialSection.content}
+              </p>
+              <div className="space-y-3">
+                {commercialSection.features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Service Options */}
         <section>
