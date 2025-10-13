@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import InteractiveMap from "@/components/InteractiveMap";
+import InteractiveMapGoogle from "@/components/InteractiveMapGoogle";
 import SEOHead from "@/components/SEOHead";
 import { counties, services, slugify } from "@/data/locations";
 import { MapPin } from "lucide-react";
@@ -16,43 +16,34 @@ const Locations = () => {
       />
       <Header />
 
-      <main className="container mx-auto px-4 md:px-8 py-16 space-y-16">
-        {/* Hero Section */}
-        <section className="text-center space-y-6">
-          <h1 className="text-5xl md:text-7xl font-black text-foreground mb-6">
-            Locations We Serve in{" "}
-            <span className="text-outlined">Southern California</span>
+      <main className="container mx-auto px-4 md:px-8 py-8 space-y-12">
+        {/* Condensed Hero Section */}
+        <section className="text-center py-6">
+          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-3">
+            Find <span className="text-outlined">Royalty Cleaning</span> Near You
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We cover Los Angeles, Orange, Riverside, San Bernardino, San Diego, and Ventura counties.
-            Tap the map or pick your city to open a tailored page for Window Cleaning, Pressure Washing,
-            Solar Panels Cleaning, Roof Cleaning, Gutters Cleaning, Post-Construction Clean Up, and Graffiti Removal.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+            Serving 200+ cities across Southern California with professional cleaning services
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:951-999-4546"
               className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
             >
-              Call (951) 999-4546
+              📞 (951) 999-4546
             </a>
             <Link
               to="/#quote"
               className="bg-card border-2 border-accent px-8 py-3 rounded-xl font-bold hover:bg-accent/10 transition-colors"
             >
-              Get a Quote
+              Get Free Quote
             </Link>
           </div>
         </section>
 
-        {/* Interactive Map */}
+        {/* Interactive Map - NOW FIRST */}
         <section>
-          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-8 text-center">
-            📍 Locations We Serve (Southern California)
-          </h2>
-          <p className="text-center text-muted-foreground mb-8 text-lg">
-            Click on county markers to explore our service areas
-          </p>
-          <InteractiveMap />
+          <InteractiveMapGoogle />
         </section>
 
         {/* County Cards with Links */}
