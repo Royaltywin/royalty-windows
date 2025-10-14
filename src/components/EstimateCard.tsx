@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import QuoteWizard from "./quote-form/QuoteWizard";
 
 const services = [
   "Window Cleaning",
@@ -13,7 +15,12 @@ const services = [
 ];
 
 const EstimateCard = () => {
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
   return (
+    <>
+      <QuoteWizard open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
+    
     <div className="bg-accent/10 border-4 border-accent rounded-3xl p-8 md:p-12 shadow-accent-glow">
       <h3 className="text-3xl md:text-4xl font-black text-foreground mb-2">
         Start Your Free Estimate
@@ -37,10 +44,16 @@ const EstimateCard = () => {
         ))}
       </div>
       
-      <Button variant="accent" size="lg" className="w-full text-xl py-6 rounded-2xl">
+      <Button 
+        variant="accent" 
+        size="lg" 
+        className="w-full text-xl py-6 rounded-2xl"
+        onClick={() => setIsQuoteOpen(true)}
+      >
         Get Started
       </Button>
     </div>
+    </>
   );
 };
 

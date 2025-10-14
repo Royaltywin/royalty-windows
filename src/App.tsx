@@ -20,6 +20,8 @@ import TermsOfService from "./pages/TermsOfService";
 import AccessibilityStatement from "./pages/AccessibilityStatement";
 import CustomerPledge from "./pages/CustomerPledge";
 import AboutUs from "./pages/AboutUs";
+import ServiceWaiver from "./pages/ServiceWaiver";
+import WaiverSuccess from "./pages/WaiverSuccess";
 
 // Pressure Washing Service Pages
 import CommercialExteriorCleaning from "./pages/pressure-washing/commercial/CommercialExteriorCleaning";
@@ -1216,6 +1218,10 @@ const App = () => (
           <Route path="/window-cleaning/silverado" element={<SilveradoWindowCleaning />} />
           <Route path="/window-cleaning/talega" element={<TalegaWindowCleaning />} />
           <Route path="/window-cleaning/trabuco-canyon" element={<TrabucoCanyonWindowCleaning />} />
+          
+          {/* Waiver Pages */}
+          <Route path="/service-waiver" element={<ServiceWaiver />} />
+          <Route path="/waiver-success/:waiverNumber" element={<WaiverSuccess />} />
           
           {/* Legal Pages */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
