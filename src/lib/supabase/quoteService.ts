@@ -76,15 +76,11 @@ export const submitQuoteRequest = async (formData: QuoteFormData) => {
       pressure_surfaces: formData.pressureSurfaces,
       pressure_structures: formData.pressureStructures,
       
-      // Exterior wash
-      exterior_wash_areas: formData.exteriorWashAreas,
-      
       // Solar panels
       solar_stories: formData.solarStories,
       solar_panels_ground: formData.solarPanelsGround,
       solar_panels_first_story: formData.solarPanelsFirstStory,
       solar_panels_second_story: formData.solarPanelsSecondStory,
-      total_solar_panels: totalSolarPanels > 0 ? totalSolarPanels : null,
       
       // Gutters
       has_gutter_guards: formData.hasGutterGuards,
@@ -104,8 +100,8 @@ export const submitQuoteRequest = async (formData: QuoteFormData) => {
       // Photos
       photo_urls: photoUrls.length > 0 ? photoUrls : null,
       
-      // Store full form as JSONB for reference
-      form_data: formData,
+      // Store full form as JSONB for reference (includes exterior_wash_areas and calculated totals)
+      form_data: formData as any,
       
       status: 'new'
     })
