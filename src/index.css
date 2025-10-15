@@ -153,20 +153,20 @@ All colors MUST be HSL.
   }
   
   .text-outlined-thick {
-    color: hsl(var(--primary));
+    color: hsl(var(--gold));
     -webkit-text-stroke: 1.5px hsl(0 0% 0%);
     paint-order: stroke fill;
     text-shadow: 
-      /* Layer 1: Thicken letters with magenta */
-      0.5px 0.5px 0 hsl(var(--primary)),
-      -0.5px -0.5px 0 hsl(var(--primary)),
-      0.5px -0.5px 0 hsl(var(--primary)),
-      -0.5px 0.5px 0 hsl(var(--primary)),
-      1px 1px 0 hsl(var(--primary)),
-      -1px -1px 0 hsl(var(--primary)),
-      1px -1px 0 hsl(var(--primary)),
-      -1px 1px 0 hsl(var(--primary)),
-      /* Layer 2: Thicker black outline */
+      /* Layer 1: Neon green inner glow */
+      0.5px 0.5px 0 hsl(var(--accent)),
+      -0.5px -0.5px 0 hsl(var(--accent)),
+      0.5px -0.5px 0 hsl(var(--accent)),
+      -0.5px 0.5px 0 hsl(var(--accent)),
+      1px 1px 0 hsl(var(--accent)),
+      -1px -1px 0 hsl(var(--accent)),
+      1px -1px 0 hsl(var(--accent)),
+      -1px 1px 0 hsl(var(--accent)),
+      /* Layer 2: Black outline for definition */
       -1.5px -1.5px 0 hsl(0 0% 0%),
       1.5px -1.5px 0 hsl(0 0% 0%),
       -1.5px 1.5px 0 hsl(0 0% 0%),
@@ -175,15 +175,17 @@ All colors MUST be HSL.
       1.5px 0 0 hsl(0 0% 0%),
       0 -1.5px 0 hsl(0 0% 0%),
       0 1.5px 0 hsl(0 0% 0%),
-      /* Layer 3: Neon green outer glow */
-      -2px -2px 0 hsl(var(--accent)),
-      2px -2px 0 hsl(var(--accent)),
-      -2px 2px 0 hsl(var(--accent)),
-      2px 2px 0 hsl(var(--accent)),
-      -3px -3px 0 hsl(var(--accent)),
-      3px -3px 0 hsl(var(--accent)),
-      -3px 3px 0 hsl(var(--accent)),
-      3px 3px 0 hsl(var(--accent));
+      /* Layer 3: Purple/magenta outer outline */
+      -2px -2px 0 hsl(var(--primary)),
+      2px -2px 0 hsl(var(--primary)),
+      -2px 2px 0 hsl(var(--primary)),
+      2px 2px 0 hsl(var(--primary)),
+      -3px -3px 0 hsl(var(--primary)),
+      3px -3px 0 hsl(var(--primary)),
+      -3px 3px 0 hsl(var(--primary)),
+      3px 3px 0 hsl(var(--primary)),
+      /* Subtle gold glow */
+      0 0 10px hsl(var(--gold) / 0.3);
   }
   
   .royal-blue {
