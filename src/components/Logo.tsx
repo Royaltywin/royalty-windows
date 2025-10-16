@@ -8,16 +8,9 @@ const Logo = () => {
         alt="Royalty Cleaning Services Logo" 
         className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain flex-shrink-0"
       />
-      <svg viewBox="0 0 800 120" className="h-12 md:h-16 lg:h-24 w-auto" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <path id="textCurve" d="M 50,90 Q 400,35 750,90" fill="transparent"/>
-        </defs>
-        <text className="font-logo font-black text-outlined-thick" style={{ fontSize: '52px', fill: 'currentColor' }}>
-          <textPath href="#textCurve" startOffset="50%" textAnchor="middle" className="tracking-wider">
-            ROYALTY CLEANING SERVICES
-          </textPath>
-        </text>
-      </svg>
+      <div className="font-gunplay font-black text-outlined-thick text-2xl md:text-4xl lg:text-5xl tracking-wider whitespace-nowrap">
+        ROYALTY CLEANING SERVICES
+      </div>
     </div>
   );
 };

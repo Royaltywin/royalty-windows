@@ -14,7 +14,7 @@ const Header = () => {
             <Logo />
           </Link>
           
-          <a href="tel:951-999-4546" className="font-logo text-3xl md:text-4xl lg:text-5xl text-outlined-thick tracking-wider font-black hover:scale-105 transition-transform whitespace-nowrap">
+          <a href="tel:951-999-4546" className="font-gunplay text-3xl md:text-4xl lg:text-5xl text-outlined-thick tracking-wider font-black hover:scale-105 transition-transform whitespace-nowrap">
             (951) 999-4546
           </a>
         </div>

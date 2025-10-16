@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         logo: ['Bebas Neue', 'sans-serif'],
+        gunplay: ['Gunplay', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

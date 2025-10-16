@@ -153,11 +153,11 @@ All colors MUST be HSL.
   }
   
   .text-outlined-thick {
-    color: hsl(var(--gold));
-    -webkit-text-stroke: 1.5px hsl(0 0% 0%);
+    color: hsl(0 0% 0%);
+    -webkit-text-stroke: 0;
     paint-order: stroke fill;
     text-shadow: 
-      /* Layer 1: Neon green inner glow */
+      /* Layer 1 (innermost): Neon green thin outline */
       0.5px 0.5px 0 hsl(var(--accent)),
       -0.5px -0.5px 0 hsl(var(--accent)),
       0.5px -0.5px 0 hsl(var(--accent)),
@@ -166,26 +166,24 @@ All colors MUST be HSL.
       -1px -1px 0 hsl(var(--accent)),
       1px -1px 0 hsl(var(--accent)),
       -1px 1px 0 hsl(var(--accent)),
-      /* Layer 2: Black outline for definition */
-      -1.5px -1.5px 0 hsl(0 0% 0%),
-      1.5px -1.5px 0 hsl(0 0% 0%),
-      -1.5px 1.5px 0 hsl(0 0% 0%),
-      1.5px 1.5px 0 hsl(0 0% 0%),
-      -1.5px 0 0 hsl(0 0% 0%),
-      1.5px 0 0 hsl(0 0% 0%),
-      0 -1.5px 0 hsl(0 0% 0%),
-      0 1.5px 0 hsl(0 0% 0%),
-      /* Layer 3: Purple/magenta outer outline */
-      -2px -2px 0 hsl(var(--primary)),
-      2px -2px 0 hsl(var(--primary)),
-      -2px 2px 0 hsl(var(--primary)),
-      2px 2px 0 hsl(var(--primary)),
+      /* Layer 2 (middle): Royal blue thicker outline */
+      -1.5px -1.5px 0 hsl(var(--royal-blue)),
+      1.5px -1.5px 0 hsl(var(--royal-blue)),
+      -1.5px 1.5px 0 hsl(var(--royal-blue)),
+      1.5px 1.5px 0 hsl(var(--royal-blue)),
+      -2px -2px 0 hsl(var(--royal-blue)),
+      2px -2px 0 hsl(var(--royal-blue)),
+      -2px 2px 0 hsl(var(--royal-blue)),
+      2px 2px 0 hsl(var(--royal-blue)),
+      /* Layer 3 (outermost): Magenta/pink outline */
+      -2.5px -2.5px 0 hsl(var(--primary)),
+      2.5px -2.5px 0 hsl(var(--primary)),
+      -2.5px 2.5px 0 hsl(var(--primary)),
+      2.5px 2.5px 0 hsl(var(--primary)),
       -3px -3px 0 hsl(var(--primary)),
       3px -3px 0 hsl(var(--primary)),
       -3px 3px 0 hsl(var(--primary)),
-      3px 3px 0 hsl(var(--primary)),
-      /* Subtle gold glow */
-      0 0 10px hsl(var(--gold) / 0.3);
+      3px 3px 0 hsl(var(--primary));
   }
   
   .royal-blue {
