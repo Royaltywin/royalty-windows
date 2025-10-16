@@ -11,6 +11,16 @@ import commercialWindowCleaning from "@/assets/carousel/commercial-window-cleani
 import houseWashing from "@/assets/carousel/house-washing.jpg";
 import roofCleaning from "@/assets/carousel/roof-cleaning.jpg";
 import commercialBuildingSignage from "@/assets/carousel/commercial-building-signage.png";
+import solarPanelsCleaningAction from "@/assets/carousel/solar-panels-cleaning-action.jpg";
+import windowCleaningBA1 from "@/assets/carousel/window-cleaning-before-after-1.jpg";
+import windowCleaningBA2 from "@/assets/carousel/window-cleaning-before-after-2.jpg";
+import windowCleaningBA3 from "@/assets/carousel/window-cleaning-before-after-3.jpg";
+import floorCleaningAction from "@/assets/carousel/floor-cleaning-action.jpg";
+import roofCleaningBA from "@/assets/carousel/roof-cleaning-before-after.jpg";
+import concreteCleaningBA from "@/assets/carousel/concrete-cleaning-before-after.jpg";
+import roofMossCleaning from "@/assets/carousel/roof-moss-cleaning.jpg";
+import luxuryResidential from "@/assets/carousel/luxury-residential-property.jpg";
+import residentialWindowTeam from "@/assets/carousel/residential-window-team.jpg";
 
 const carouselImages = [
   { src: commercialBuilding1, alt: "Professional commercial building exterior cleaning services" },
@@ -23,6 +33,16 @@ const carouselImages = [
   { src: houseWashing, alt: "Before and after residential house washing services" },
   { src: roofCleaning, alt: "Professional roof cleaning and maintenance services" },
   { src: commercialBuildingSignage, alt: "Modern commercial building cleaning and maintenance" },
+  { src: solarPanelsCleaningAction, alt: "Professional solar panel cleaning service in action" },
+  { src: windowCleaningBA1, alt: "Residential window cleaning transformation before and after" },
+  { src: windowCleaningBA2, alt: "Crystal clear window cleaning results before and after" },
+  { src: windowCleaningBA3, alt: "Professional window cleaning dramatic transformation" },
+  { src: floorCleaningAction, alt: "Professional floor cleaning and restoration service" },
+  { src: roofCleaningBA, alt: "Roof cleaning before and after transformation" },
+  { src: concreteCleaningBA, alt: "Concrete patio cleaning before and after results" },
+  { src: roofMossCleaning, alt: "Professional roof moss removal and cleaning service" },
+  { src: luxuryResidential, alt: "Luxury residential property cleaning and maintenance" },
+  { src: residentialWindowTeam, alt: "Professional residential window cleaning team at work" },
 ];
 
 const HeroImageCarousel = () => {
@@ -66,14 +86,14 @@ const HeroImageCarousel = () => {
 
   return (
     <div className="relative w-full">
-      <div className="overflow-hidden rounded-2xl shadow-2xl border-8 border-primary" ref={emblaRef}>
-        <div className="flex">
+      <div className="overflow-hidden rounded-2xl shadow-2xl border-8 border-primary h-[600px]" ref={emblaRef}>
+        <div className="flex h-full">
           {carouselImages.map((image, index) => (
-            <div className="flex-[0_0_100%] min-w-0" key={index}>
+            <div className="flex-[0_0_100%] min-w-0 h-full" key={index}>
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
