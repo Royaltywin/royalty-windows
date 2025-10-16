@@ -1,5 +1,5 @@
-import customerImage from "@/assets/hero-customer.jpg";
 import QuoteWizard from "@/components/QuoteWizard";
+import HeroImageCarousel from "@/components/HeroImageCarousel";
 const Hero = () => {
   return <section className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-8">
@@ -19,11 +19,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Middle: Customer Support Image */}
+          {/* Middle: Service Showcase Carousel */}
           <div className="flex justify-center">
-            <div className="relative w-full">
-              <img src={customerImage} alt="Customer support representative ready to help with your cleaning needs" className="w-full h-auto rounded-2xl shadow-2xl border-8 border-primary" />
-            </div>
+            <HeroImageCarousel />
           </div>
 
           {/* Right: Quote Form */}
