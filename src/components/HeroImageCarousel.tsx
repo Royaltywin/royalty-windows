@@ -4,13 +4,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import commercialBuilding1 from "@/assets/carousel/commercial-building-1.jpg";
 import windowCleaningWorkers from "@/assets/carousel/window-cleaning-workers.jpg";
 import solarPanelsPalmTrees from "@/assets/carousel/solar-panels-palm-trees.jpg";
-import deckRestoration from "@/assets/carousel/deck-restoration.jpg";
-import customerService from "@/assets/carousel/customer-service.jpg";
 import solarCleaningMountains from "@/assets/carousel/solar-cleaning-mountains.jpg";
 import commercialWindowCleaning from "@/assets/carousel/commercial-window-cleaning.jpg";
 import houseWashing from "@/assets/carousel/house-washing.jpg";
-import roofCleaning from "@/assets/carousel/roof-cleaning.jpg";
-import commercialBuildingSignage from "@/assets/carousel/commercial-building-signage.png";
 import solarPanelsCleaningAction from "@/assets/carousel/solar-panels-cleaning-action.jpg";
 import windowCleaningBA1 from "@/assets/carousel/window-cleaning-before-after-1.jpg";
 import windowCleaningBA2 from "@/assets/carousel/window-cleaning-before-after-2.jpg";
@@ -26,13 +22,9 @@ const carouselImages = [
   { src: commercialBuilding1, alt: "Professional commercial building exterior cleaning services" },
   { src: windowCleaningWorkers, alt: "Expert window cleaning team at work on commercial buildings" },
   { src: solarPanelsPalmTrees, alt: "Solar panel cleaning and maintenance with palm trees" },
-  { src: deckRestoration, alt: "Before and after deck restoration cleaning services" },
-  { src: customerService, alt: "Friendly customer service representative ready to help" },
   { src: solarCleaningMountains, alt: "Professional solar panel cleaning with mountain views" },
   { src: commercialWindowCleaning, alt: "High-rise commercial window cleaning experts" },
   { src: houseWashing, alt: "Before and after residential house washing services" },
-  { src: roofCleaning, alt: "Professional roof cleaning and maintenance services" },
-  { src: commercialBuildingSignage, alt: "Modern commercial building cleaning and maintenance" },
   { src: solarPanelsCleaningAction, alt: "Professional solar panel cleaning service in action" },
   { src: windowCleaningBA1, alt: "Residential window cleaning transformation before and after" },
   { src: windowCleaningBA2, alt: "Crystal clear window cleaning results before and after" },
