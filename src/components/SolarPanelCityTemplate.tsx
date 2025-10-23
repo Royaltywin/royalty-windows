@@ -102,6 +102,9 @@ const SolarPanelCityTemplate = ({ cityName, citySlug, countyName, countySlug }: 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 drop-shadow-2xl pointer-events-none">
                 Royalty Solar Panels Cleaning — {cityName}, {countyName}
               </h1>
+              <p className="text-sm text-white/70 mb-3 drop-shadow-lg pointer-events-none">
+                Royalty Solar Panel Cleaning {cityName} • Also known as {cityName} Solar Panel Cleaning
+              </p>
               <p className="text-lg md:text-xl text-white/95 mb-6 max-w-2xl drop-shadow-lg pointer-events-none">
                 Christian-Owned • 200+ Homes Cleaned • Licensed & Insured
               </p>

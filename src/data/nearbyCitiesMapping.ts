@@ -588,8 +588,11 @@ export const nearbyCitiesMap: Record<string, Array<{ name: string; slug: string 
     { name: "Cardiff-by-the-Sea", slug: "cardiff-by-the-sea" },
   ],
   "fallbrook": [
-    { name: "Bonsall", slug: "bonsall" },
+    { name: "Temecula", slug: "temecula" },
     { name: "Oceanside", slug: "oceanside" },
+    { name: "Escondido", slug: "escondido" },
+    { name: "Vista", slug: "vista" },
+    { name: "Bonsall", slug: "bonsall" },
   ],
   "ramona": [
     { name: "Poway", slug: "poway" },

@@ -39,6 +39,9 @@ const PressureWashingCityTemplate = ({
             <h1 className="text-5xl md:text-7xl font-black text-foreground text-3d">
               Royalty Pressure Washing
             </h1>
+            <p className="text-sm text-muted-foreground/70 mb-2">
+              Royalty Pressure Washing {cityName} • Also known as {cityName} Pressure Washing
+            </p>
             <p className="text-3xl md:text-4xl font-bold text-gold">
               {cityName}, {countyName}
             </p>

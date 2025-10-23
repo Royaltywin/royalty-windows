@@ -79,6 +79,9 @@ const PressureWashingServiceTemplate = ({
           <h1 className="text-5xl md:text-7xl font-black text-white mb-4 text-3d">
             {heroTitle}
           </h1>
+          <p className="text-sm text-white/70 mb-4">
+            Royalty Pressure Washing {serviceName} • Also known as {serviceName}
+          </p>
           <p className="text-2xl md:text-3xl text-white/90 font-bold mb-6">
             {heroSubtitle}
           </p>

@@ -126,6 +126,9 @@ const WindowCleaningCityTemplate = ({
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Window Cleaning in {cityName}, CA
                 </h1>
+                <p className="text-sm text-muted-foreground/80 mb-4">
+                  Royalty Window Cleaning {cityName} • Also known as {cityName} Window Cleaning
+                </p>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-foreground/90">
                   Streak-Free Interior & Exterior Window Washing for Homes & Businesses
                 </h2>
