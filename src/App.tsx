@@ -22,6 +22,9 @@ import CustomerPledge from "./pages/CustomerPledge";
 import AboutUs from "./pages/AboutUs";
 import ServiceWaiver from "./pages/ServiceWaiver";
 import WaiverSuccess from "./pages/WaiverSuccess";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 // Pressure Washing Service Pages
 import CommercialExteriorCleaning from "./pages/pressure-washing/commercial/CommercialExteriorCleaning";
@@ -1357,6 +1360,17 @@ const App = () => (
           {/* Service-City Pages - Dynamic Route for all services x all cities */}
           <Route path="/:service/:city" element={<ServiceCity />} />
           
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route 
+            path="/admin/dashboard" 
+            element={
+              <ProtectedRoute requiredRole="staff">
+                <AdminDashboard />
+              </ProtectedRoute>
+            } 
+          />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
